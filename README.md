@@ -20,6 +20,8 @@ My special areas of interest include `Data Science` | `Deep Learning` | `AI` | `
 
 **_My GitHub Stats:_**
 
+![Profile views](https://gpvc.arturio.dev/NishanthRajkumar)
+
 ![github stats](https://github-readme-stats.vercel.app/api?username=NishanthRajkumar&show_icons=true&hide_border=true)
 ![github stats](https://github-readme-stats.vercel.app/api/top-langs/?username=NishanthRajkumar)
 ![github stats](https://github-readme-streak-stats.herokuapp.com/?user=NishanthRajkumar)
