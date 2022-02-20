@@ -1,5 +1,7 @@
 ### Hi there 👋, this is Nishanth Rajkumar
 
+**_About Me_**
+
 I am a software engineer and a Data Science/Programming enthusiast. Currently working on my startup/business idea, and here is the link to the website: [_Wysible_](https://wysible.com/)<br />
 I am highly proficient in `python`, `C#`, `Java`, `C++`. I am currently focusing on .Net and Data science. I am on my path to acheiving my goal of being able to handle Data Science like the back of my hand 😁✌️. I am looking for opportunities in Dev Roles, Data Engineer/Analyst and the like.<br />
 My special areas of interest include `Data Science` | `Deep Learning` | `AI` | `Cloud Computing` | `Graphics and Gaming`<br />
@@ -20,7 +22,7 @@ My special areas of interest include `Data Science` | `Deep Learning` | `AI` | `
 
 **_My GitHub Stats:_**
 
-![Profile views](https://gpvc.arturio.dev/NishanthRajkumar)
+![Profile views](https://komarev.com/ghpvc/?username=NishanthRajkumar&label=PROFILE+VIEWS&style=flat&color=blue)
 
 ![github stats](https://github-readme-stats.vercel.app/api?username=NishanthRajkumar&show_icons=true&hide_border=true)
 ![github stats](https://github-readme-stats.vercel.app/api/top-langs/?username=NishanthRajkumar)
