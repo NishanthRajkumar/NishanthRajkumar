@@ -11,7 +11,7 @@ My special areas of interest include `Data Science` | `Deep Learning` | `AI` | `
 - 🔭 I am updating myself on Hadoop, spark and pyspark.
 - 🌱 I’m currently learning about Azure cloud computing.
 - 💼 I am looking for oopurtunities in .Net, Java, Python, developer roles, Data Engineer/Analyst. Open to other opportunities.
-- 🤔 Looking for help with web/mobile deployment on cloud.
+- 🤔 Looking for help with web/mobile deployment on cloud and lucene with python.
 - 📫 You can reach out to me via: 
 <br></br>
 [![image](https://img.shields.io/badge/nishrk97@outlook.com-0078D4?style=flat&logo=microsoft-outlook&logoColor=white&link=mailto:nishrk97@outlook.com)](mailto:nishrk97@outlook.com)
