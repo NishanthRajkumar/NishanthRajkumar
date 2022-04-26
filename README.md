@@ -3,7 +3,7 @@
 **_About Me_**
 
 I am a software engineer and a Data Science/Programming enthusiast.<br />
-I am highly proficient in `python`, `C#`, `Java`, `C++`. I am currently focusing on .Net and Data science. I am on my path to acheiving my goal of being able to handle Data Science like the back of my hand 😁✌️.<br />
+I am highly proficient in `python`, `C#`, `Java`, `C++`. I am currently focusing on python and Deep-learning. I am on my path to acheiving my goal of being able to handle Data Science like the back of my hand 😁✌️.<br />
 I am looking for opportunities in Dev Roles, Data Engineer/Analyst and the like.<br />
 My special areas of interest include `Data Science` | `Deep Learning` | `AI` | `Cloud Computing` | `Graphics and Gaming`<br />
 
