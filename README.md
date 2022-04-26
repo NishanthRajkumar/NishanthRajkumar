@@ -8,10 +8,10 @@ I am looking for opportunities in Dev Roles, Data Engineer/Analyst and the like.
 My special areas of interest include `Data Science` | `Deep Learning` | `AI` | `Cloud Computing` | `Graphics and Gaming`<br />
 
 **_What I am upto:_**
-- 🔭 I am updating myself on the latest .Net framework (6.0), ML.Net, Data science/Analytics using python.
-- 🌱 I’m currently learning about the latest .Net framework, data modeling & deployment, Machine learning, Deep learning... etc.
+- 🔭 I am updating myself on Hadoop, spark and pyspark.
+- 🌱 I’m currently learning about Azure cloud computing.
 - 💼 I am looking for oopurtunities in .Net, Java, Python, developer roles, Data Engineer/Analyst. Open to other opportunities.
-- 🤔 Looking for help with ML.Net, modeling and deployment.
+- 🤔 Looking for help with web/mobile deployment on cloud.
 - 📫 You can reach out to me via: 
 <br></br>
 [![image](https://img.shields.io/badge/nishrk97@outlook.com-0078D4?style=flat&logo=microsoft-outlook&logoColor=white&link=mailto:nishrk97@outlook.com)](mailto:nishrk97@outlook.com)
