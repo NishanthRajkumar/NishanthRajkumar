@@ -3,15 +3,16 @@
 **_About Me_**
 
 I am a software engineer and a Data Science/Programming enthusiast.<br />
-I am highly proficient in `python`, `C#`, `Java`, `C++`. I am currently focusing on python and Deep-learning. I am on my path to acheiving my goal of being able to handle Data Science like the back of my hand 😁✌️.<br />
+I am highly proficient in `python` | `C#` | `Java` | `C++`. I am currently focusing on python and Deep-learning. I am on my path to acheiving my goal of being able to handle Data Science like the back of my hand 😁✌️.<br />
+I have experience working on `Azure` | `Data Factory` | `Synapse` | `Azure ML`.<br />
 I am looking for opportunities in Dev Roles, Data Engineer/Analyst and the like.<br />
 My special areas of interest include `Data Science` | `Deep Learning` | `AI` | `Cloud Computing` | `Graphics and Gaming`<br />
 
 **_What I am upto:_**
-- 🔭 I am updating myself on Hadoop, spark and pyspark.
-- 🌱 I’m currently learning about Azure cloud computing.
+- 🔭 I am updating myself on Azure ML.
+- 🌱 I’m currently learning about Deep Learning and Neural Network.
 - 💼 I am looking for oopurtunities in .Net, Java, Python, developer roles, Data Engineer/Analyst. Open to other opportunities.
-- 🤔 Looking for help with web/mobile deployment on cloud and lucene with python.
+- 🤔 Looking for help with UI/UX and frontend dev(react) for a website I am working on.
 - 📫 You can reach out to me via: 
 <br></br>
 [![image](https://img.shields.io/badge/nishrk97@outlook.com-0078D4?style=flat&logo=microsoft-outlook&logoColor=white&link=mailto:nishrk97@outlook.com)](mailto:nishrk97@outlook.com)
