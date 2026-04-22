@@ -16,7 +16,6 @@ My special areas of interest include `Data Science` | `Deep Learning` | `AI` | `
 - 📫 You can reach out to me via: 
 <br></br>
 [![image](https://img.shields.io/badge/nishrk97@outlook.com-0078D4?style=flat&logo=microsoft-outlook&logoColor=white&link=mailto:nishrk97@outlook.com)](mailto:nishrk97@outlook.com)
-[![image](https://img.shields.io/badge/nish@wysible.com-D14836?style=flat&logo=gmail&logoColor=white&link=mailto:nish@wysible.com)](mailto:nish@wysible.com)
 [![image](https://img.shields.io/badge/Nishanth_Rajkumar-100000?style=flat&logo=github&logoColor=white&link=https://github.com/NishanthRajkumar)](https://github.com/NishanthRajkumar)
 [![image](https://img.shields.io/badge/Nish-E4405F?style=flat&logo=instagram&logoColor=white&link=https://www.instagram.com/nish_rk_97/)](https://www.instagram.com/nish_rk_97/)
 [![image](https://img.shields.io/badge/Nish9701-1DA1F2?style=flat&logo=twitter&logoColor=white&link=https://twitter.com/Nish9701)](https://twitter.com/Nish9701)
