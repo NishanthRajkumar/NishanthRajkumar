@@ -196,7 +196,12 @@ if (shuffleHighlights) {
 
 const trackedLinks = document.querySelectorAll("[data-track]");
 const pdfPrimaryLinks = document.querySelectorAll("a[data-fallback]");
+const directDownloadLinks = document.querySelectorAll("a[download]:not([data-fallback])");
 const linkAvailabilityCache = new Map();
+
+function isDocxUrl(url) {
+  return /\.docx(?:$|[?#])/i.test(url || "");
+}
 
 function getFileNameFromUrl(url) {
   const safeUrl = (url || "").split("#")[0];
@@ -288,6 +293,23 @@ pdfPrimaryLinks.forEach((link) => {
     } catch {
       // Fallback for restrictive environments where fetch/blob download is blocked.
       fallbackAnchorDownload(destination);
+    }
+  });
+});
+
+directDownloadLinks.forEach((link) => {
+  const href = link.getAttribute("href") || "";
+  if (!isDocxUrl(href)) {
+    return;
+  }
+
+  link.addEventListener("click", async (event) => {
+    event.preventDefault();
+
+    try {
+      await forceDownload(href);
+    } catch {
+      fallbackAnchorDownload(href);
     }
   });
 });
