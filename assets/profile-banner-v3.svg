@@ -1,0 +1,99 @@
+<svg width="1200" height="420" viewBox="0 0 1200 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="1200" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#071426"/>
+      <stop offset="0.52" stop-color="#0D2742"/>
+      <stop offset="1" stop-color="#15466A"/>
+    </linearGradient>
+    <linearGradient id="beam" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#65DAFF" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="#65DAFF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="accent3" x1="80" y1="80" x2="1140" y2="340" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#54D7FF"/>
+      <stop offset="0.5" stop-color="#9BE8C8"/>
+      <stop offset="1" stop-color="#FFCE83"/>
+    </linearGradient>
+    <filter id="soft" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur stdDeviation="30"/>
+    </filter>
+    <filter id="softRight" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="44"/>
+    </filter>
+    <linearGradient id="leftShade" x1="0" y1="0" x2="760" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#020A14" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#020A14" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="clipRounded">
+      <rect width="1200" height="420" rx="36"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#clipRounded)">
+
+  <rect width="1200" height="420" rx="36" fill="url(#bg3)"/>
+  <rect x="0" y="0" width="760" height="420" fill="url(#leftShade)"/>
+
+  <polygon points="0,0 500,0 260,420 0,420" fill="url(#beam)" opacity="0.35"/>
+  <polygon points="820,0 1200,0 1200,420 980,420" fill="#B5DBFF" fill-opacity="0.07"/>
+
+  <circle cx="1080" cy="84" r="92" fill="#6FDFFF" fill-opacity="0.08" filter="url(#softRight)"/>
+  <circle cx="122" cy="364" r="86" fill="#FFC982" fill-opacity="0.1" filter="url(#soft)"/>
+
+
+  <g transform="translate(74 72)">
+    <rect x="0" y="0" width="160" height="36" rx="18" fill="white" fill-opacity="0.08" stroke="white" stroke-opacity="0.1"/>
+    <text x="80" y="24" text-anchor="middle" fill="#D2DEEF" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="2">PORTFOLIO</text>
+  </g>
+
+  <text x="74" y="176" fill="#FFFFFF" font-family="Georgia, 'Times New Roman', serif" font-size="58" font-weight="700">Nishanth Rajkumar</text>
+
+  <text x="74" y="218" fill="#ECF3FF" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">
+    <tspan x="74" dy="0">Data Engineer | Cloud Data Platforms</tspan>
+    <tspan x="74" dy="30">AI-Assisted Engineering</tspan>
+  </text>
+
+  <text x="74" y="280" fill="#CDDEEF" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="500">
+    <tspan x="74" dy="0">Databricks, GCP + Azure pipelines, CDC, and automation.</tspan>
+    <tspan x="74" dy="24">Reliable delivery for enterprise-scale platforms.</tspan>
+  </text>
+
+  <g transform="translate(74 324)">
+    <rect x="0" y="0" width="136" height="32" rx="16" fill="#54D7FF" fill-opacity="0.15" stroke="#54D7FF" stroke-opacity="0.3"/>
+    <text x="68" y="21" text-anchor="middle" fill="#EAFBFF" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">Data Platforms</text>
+  </g>
+  <g transform="translate(220 324)">
+    <rect x="0" y="0" width="116" height="32" rx="16" fill="#9BE8C8" fill-opacity="0.15" stroke="#9BE8C8" stroke-opacity="0.3"/>
+    <text x="58" y="21" text-anchor="middle" fill="#EEFFF8" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">Automation</text>
+  </g>
+  <g transform="translate(346 324)">
+    <rect x="0" y="0" width="180" height="32" rx="16" fill="#FFCE83" fill-opacity="0.15" stroke="#FFCE83" stroke-opacity="0.3"/>
+    <text x="90" y="21" text-anchor="middle" fill="#FFF8E9" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">AI-Assisted Delivery</text>
+  </g>
+
+  <g transform="translate(916 84)">
+    <rect x="0" y="0" width="248" height="248" rx="28" fill="white" fill-opacity="0.05" stroke="white" stroke-opacity="0.1"/>
+    <text x="32" y="42" fill="#D8E8F9" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="1.2">IMPACT HIGHLIGHTS</text>
+
+    <g transform="translate(24 62)">
+      <rect x="0" y="0" width="200" height="52" rx="12" fill="#54D7FF" fill-opacity="0.11" stroke="#54D7FF" stroke-opacity="0.28"/>
+      <text x="14" y="24" fill="#F2FCFF" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="800">15TB+</text>
+      <text x="14" y="41" fill="#CBE1F3" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="600">Enterprise Data Scale Handled</text>
+    </g>
+
+    <g transform="translate(24 122)">
+      <rect x="0" y="0" width="96" height="52" rx="12" fill="#9BE8C8" fill-opacity="0.12" stroke="#9BE8C8" stroke-opacity="0.28"/>
+      <text x="12" y="24" fill="#F2FFF9" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="800">80%</text>
+      <text x="12" y="41" fill="#CBE8DE" font-family="Segoe UI, Arial, sans-serif" font-size="10.5" font-weight="600">Prod Gain</text>
+    </g>
+
+    <g transform="translate(128 122)">
+      <rect x="0" y="0" width="96" height="52" rx="12" fill="#FFCE83" fill-opacity="0.12" stroke="#FFCE83" stroke-opacity="0.28"/>
+      <text x="12" y="24" fill="#FFF8EA" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="800">22</text>
+      <text x="12" y="41" fill="#F0DDC0" font-family="Segoe UI, Arial, sans-serif" font-size="10.5" font-weight="600">Improvements</text>
+    </g>
+
+    <text x="32" y="206" fill="#BBD0E5" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600">Data Platforms | Automation | AI Delivery</text>
+  </g>
+</g>
+</svg>
