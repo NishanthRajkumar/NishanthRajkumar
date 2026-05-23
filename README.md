@@ -6,6 +6,7 @@
   <a href="mailto:nishrk97@outlook.com"><img src="https://img.shields.io/badge/Email-nishrk97%40outlook.com-0078D4?style=flat&logo=microsoft-outlook&logoColor=white" alt="Email"></a>
   <a href="https://www.linkedin.com/in/nishanthrajkumar"><img src="https://img.shields.io/badge/LinkedIn-Nishanth%20Rajkumar-0A66C2?style=flat&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
   <a href="https://github.com/NishanthRajkumar"><img src="https://img.shields.io/badge/GitHub-NishanthRajkumar-111827?style=flat&logo=github&logoColor=white" alt="GitHub"></a>
+  <a href="https://nishanthrajkumar.me"><img src="https://img.shields.io/badge/Website-nishanthrajkumar.me-0F766E?style=flat&logo=google-chrome&logoColor=white" alt="Website"></a>
 </p>
 
 ---
@@ -143,4 +144,4 @@ Data Engineering and Cloud Data Platform roles focused on integration-heavy, hig
 
 ### Reach Me
 
-[Email](mailto:nishrk97@outlook.com) | [LinkedIn](https://www.linkedin.com/in/nishanthrajkumar) | [GitHub](https://github.com/NishanthRajkumar)
+[Website](https://nishanthrajkumar.me) | [Email](mailto:nishrk97@outlook.com) | [LinkedIn](https://www.linkedin.com/in/nishanthrajkumar) | [GitHub](https://github.com/NishanthRajkumar)
