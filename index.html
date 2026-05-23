@@ -3,19 +3,62 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nishanth Rajkumar | Portfolio</title>
-  <meta name="description" content="Senior Data Engineering Professional building enterprise cloud data platforms across Azure and GCP with measurable outcomes at scale.">
-  <meta property="og:title" content="Nishanth Rajkumar | Senior Data Engineer">
+  <title>Nishanth Rajkumar | Data Engineer · Cloud Data Platforms</title>
+  <meta name="description" content="Nishanth Rajkumar (Nish) — Data Engineer building enterprise cloud data platforms across Azure and GCP with Databricks-native engineering and measurable delivery outcomes.">
+  <meta name="author" content="Nishanth Rajkumar">
+  <link rel="canonical" href="https://nishanthrajkumar.me/">
+  <meta name="theme-color" content="#0f766e" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="favicon.svg">
+  <meta property="og:title" content="Nishanth Rajkumar | Data Engineer">
   <meta property="og:description" content="Enterprise data platforms, cross-cloud integration, and measurable delivery impact across Azure and GCP.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/profile-banner-v3.svg">
+  <meta property="og:url" content="https://nishanthrajkumar.me/">
+  <meta property="og:image" content="https://nishanthrajkumar.me/assets/og-image.svg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Nishanth Rajkumar | Senior Data Engineer">
+  <meta name="twitter:title" content="Nishanth Rajkumar | Data Engineer">
   <meta name="twitter:description" content="Cloud Data Platforms, Enterprise Integration, and Reliable Delivery at 15TB+ scale.">
+  <meta name="twitter:image" content="https://nishanthrajkumar.me/assets/og-image.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script>
+    // Apply saved theme before paint to avoid flash.
+    (function () {
+      try {
+        var saved = localStorage.getItem("nr-theme");
+        var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        var theme = saved || (prefersDark ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+      } catch (e) { /* ignore */ }
+    })();
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Nishanth Rajkumar",
+    "alternateName": "Nish",
+    "jobTitle": "Data Engineer",
+    "url": "https://nishanthrajkumar.me",
+    "email": "mailto:nishrk97@outlook.com",
+    "address": { "@type": "PostalAddress", "addressLocality": "Chennai", "addressCountry": "IN" },
+    "sameAs": [
+      "https://www.linkedin.com/in/nishanthrajkumar",
+      "https://github.com/NishanthRajkumar"
+    ],
+    "knowsAbout": [
+      "Azure Data Factory", "Azure Synapse", "Microsoft Fabric",
+      "Google BigQuery", "Google Dataflow", "Databricks", "Apache Spark",
+      "ETL", "ELT", "Change Data Capture", "Data Engineering",
+      "Python", "C#", ".NET", "SQL", "PySpark", "KQL"
+    ]
+  }
+  </script>
 </head>
 <body>
   <div class="ambient" aria-hidden="true">
@@ -27,20 +70,29 @@
   <header class="site-header" id="top">
     <nav class="nav shell">
       <a href="#top" class="brand">Nishanth Rajkumar</a>
-      <button id="menuToggle" class="menu-toggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
+      <div class="nav-controls">
+        <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle color theme" title="Toggle light / dark theme">
+          <span class="theme-icon" aria-hidden="true">◐</span>
+          <span class="sr-only" id="themeLabel">Toggle theme</span>
+        </button>
+        <button id="menuToggle" class="menu-toggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
+      </div>
       <ul id="navLinks" class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#summary">Summary</a></li>
-        <li><a href="#metrics">Impact</a></li>
-        <li><a href="#projects">Projects</a></li>
+        <li><a href="#initiative">Initiative</a></li>
+        <li><a href="#architecture">Architecture</a></li>
         <li><a href="#timeline">Experience</a></li>
-        <li><a href="#credentials">Credentials</a></li>
+        <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
 
     <section class="hero shell" aria-labelledby="heroTitle">
       <div class="hero-copy reveal">
+        <a class="spotlight-pill" href="#initiative" aria-label="Jump to signature initiative: AI-integrated BigQuery SDLC">
+          <span class="spotlight-badge">Signature Initiative</span>
+          <span class="spotlight-text">AI-integrated BigQuery SDLC — now the reference pattern across teams</span>
+          <span class="spotlight-arrow" aria-hidden="true">→</span>
+        </a>
         <p class="kicker">Cloud Data Engineering</p>
         <h1 id="heroTitle">Designing data systems that stay reliable at enterprise scale.</h1>
         <p class="lede">
@@ -48,106 +100,249 @@
           observability by design, and AI-assisted delivery that compounds team velocity.
         </p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#projects">Explore Projects</a>
+          <a class="btn btn-primary" href="#initiative">See the Initiative</a>
           <a class="btn btn-secondary" href="mailto:nishrk97@outlook.com">Work With Me</a>
-          <button class="btn btn-ghost" id="shuffleHighlights">Impact Tour</button>
+          <button class="btn btn-ghost" id="shuffleHighlights"><span class="play-icon" aria-hidden="true">▶</span> Impact Tour</button>
         </div>
-        <div class="doc-cta-row">
-          <a class="btn btn-secondary" href="docs/Nish_Resume_SL_20260430.pdf" download data-track="resume_pdf_click" data-fallback="docs/Nish_Resume_SL_20260430.docx">Resume PDF</a>
-          <a class="doc-fallback" href="docs/Nish_Resume_SL_20260430.docx" download data-track="resume_docx_click">DOCX</a>
-          <a class="btn btn-secondary" href="docs/Nish_ProfSumm_SL_20260430.pdf" download data-track="prosummary_pdf_click" data-fallback="docs/Nish_ProfSumm_SL_20260430.docx">Summary PDF</a>
-          <a class="doc-fallback" href="docs/Nish_ProfSumm_SL_20260430.docx" download data-track="prosummary_docx_click">DOCX</a>
-        </div>
+        <p class="hero-tertiary">
+          <a href="#projects">Or browse personal sandbox projects &rarr;</a>
+        </p>
       </div>
-      <div class="hero-art reveal">
-        <img src="assets/profile-banner-v3.svg" alt="Nishanth Rajkumar profile banner">
+      <div class="hero-art reveal" aria-hidden="true">
+        <div class="stack-constellation">
+          <span class="stack-core">Cloud Data<br>Engineering</span>
+          <span class="stack-chip chip-tl">BigQuery</span>
+          <span class="stack-chip chip-tr">Databricks</span>
+          <span class="stack-chip chip-ml">Azure</span>
+          <span class="stack-chip chip-mr">GCP</span>
+          <span class="stack-chip chip-bl">Python</span>
+          <span class="stack-chip chip-br">.NET</span>
+          <span class="stack-chip chip-t">CDC</span>
+          <span class="stack-chip chip-b">Fabric</span>
+        </div>
       </div>
     </section>
 
     <section class="proof-strip shell reveal" aria-label="Key proof points">
-      <div class="proof-grid">
-        <article class="proof-item"><p class="proof-value">3y 10m</p><p class="proof-label">Experience</p></article>
-        <article class="proof-item"><p class="proof-value">15TB+</p><p class="proof-label">Data Scale</p></article>
-        <article class="proof-item"><p class="proof-value">80%</p><p class="proof-label">Productivity Gain</p></article>
-        <article class="proof-item"><p class="proof-value">11</p><p class="proof-label">POCs Beyond Target</p></article>
-        <article class="proof-item"><p class="proof-value">14</p><p class="proof-label">Innovation Initiatives</p></article>
-        <article class="proof-item"><p class="proof-value">22</p><p class="proof-label">Operational Improvements</p></article>
+      <div class="proof-anchor-row">
+        <article class="proof-item proof-anchor"><p class="proof-value" data-experience-since="2022-06">--</p><p class="proof-label">Experience</p></article>
+        <article class="proof-item proof-anchor" data-tour-step="3"><p class="proof-value">15TB+</p><p class="proof-label">Data Scale</p></article>
       </div>
+      <div class="proof-grid proof-secondary-row">
+        <article class="proof-item" data-tour-step="0"><p class="proof-value">80%</p><p class="proof-label">Productivity Gain</p></article>
+        <article class="proof-item" data-tour-step="1"><p class="proof-value">11</p><p class="proof-label">POCs Beyond Target</p></article>
+        <article class="proof-item"><p class="proof-value">14</p><p class="proof-label">Innovation Initiatives</p></article>
+        <article class="proof-item" data-tour-step="2"><p class="proof-value">22</p><p class="proof-label">Operational Improvements</p></article>
+      </div>
+      <p class="metric-story" id="metricsStory" aria-live="polite">Click <span aria-hidden="true">▶</span> Impact Tour to run a 4-step walkthrough of these outcomes.</p>
     </section>
   </header>
 
   <main>
-    <section id="about" class="section shell reveal" aria-labelledby="aboutTitle">
+    <section id="initiative" class="section shell reveal" aria-labelledby="initiativeTitle">
       <div class="section-head">
-        <p class="kicker">Profile</p>
-        <h2 id="aboutTitle">What I focus on</h2>
+        <p class="kicker">Signature Initiative</p>
+        <h2 id="initiativeTitle">AI-integrated BigQuery SDLC — a repo-first operating model</h2>
       </div>
-      <div class="cards three-up">
-        <article class="card soft">
-          <h3>Architecture</h3>
-          <p>ETL and ELT platforms, CDC flows, and integration-first system design for resilient business pipelines.</p>
-        </article>
-        <article class="card soft">
-          <h3>Reliability</h3>
-          <p>Operational excellence through retries, lineage, alerts, and observability patterns baked into delivery.</p>
-        </article>
-        <article class="card soft">
-          <h3>Acceleration</h3>
-          <p>AI-assisted engineering workflows that shorten delivery cycles while preserving production-grade quality.</p>
-        </article>
-      </div>
-    </section>
+      <article class="card initiative-card">
+        <div class="initiative-outcome-band" role="note" aria-label="Headline outcome">
+          <span class="outcome-band-label">Outcome</span>
+          <span class="outcome-band-metric">~5 days &rarr; 1&ndash;2 days</span>
+          <span class="outcome-band-tag">Adopted as the org's reference pattern</span>
+        </div>
+        <p class="initiative-lede">
+          Self-driven initiative to make AI pair-programming safely usable on a warehouse platform that had
+          <em>no native repo support and zero margin for unreviewed change</em>. Now the reference pattern other
+          Ashley teams are pointed to for their own data platforms.
+        </p>
 
-    <section id="summary" class="section shell reveal" aria-labelledby="summaryTitle">
-      <div class="section-head">
-        <p class="kicker">Executive Summary</p>
-        <h2 id="summaryTitle">Strategic Data Engineering Leader</h2>
-      </div>
-      <article class="card executive-panel">
-        <p>
-          Results-driven data engineering professional with 3 years and 10 months of progressive delivery across enterprise cloud modernization programs.
-          I design and implement integration-heavy, cloud-native data platforms across Azure and GCP with strong depth in ETL and ELT,
-          real-time CDC, API-first integration, and operational reliability.
-        </p>
-        <p>
-          My recent delivery spans BigQuery, Dataflow, Cloud Functions, Azure Data Factory, Synapse, Fabric, .NET services,
-          and analytics enablement at 15TB+ scale. Through AI-assisted engineering workflows and process discipline,
-          I have delivered measurable outcomes including 80% productivity gain, 11 POCs beyond target, and 22 operational improvements.
-        </p>
+        <div class="initiative-grid">
+          <section class="initiative-block initiative-block--muted">
+            <h3>Problem</h3>
+            <ul>
+              <li>Ashley pushed AI-first SDLC across engineering, but BigQuery (and warehouse platforms generally) had no native or third-party way to live in a Git repo — the very context AI tools need to be useful.</li>
+              <li>Leadership had legitimate concerns about AI touching databases: unintended schema or data changes are not as reversible as code, and human accountability had to be preserved.</li>
+              <li>Teams working on APIs, frontends and backends were accelerating with AI. Data engineering was being left behind.</li>
+            </ul>
+          </section>
+
+          <section class="initiative-block initiative-block--muted">
+            <h3>Approach</h3>
+            <ul>
+              <li><strong>Exported BigQuery into a repo:</strong> wrote an <code>INFORMATION_SCHEMA</code> query that emits every table, view, routine and function as SQL files into GCS, then materialised them into a proper repository structure with parallel JSON metadata for AI context.</li>
+              <li><strong>Guardrails for the AI:</strong> authored an RFC-2119 style standards document (naming, audit columns, formatting, partitioning, JOIN discipline, documentation) that Augment Code is required to follow on every change.</li>
+              <li><strong>Guardrails for humans:</strong> a development workflow that forbids direct DDL on any BigQuery project; all structural changes flow through feature branch → PR review → generated change script with explicit data-migration steps → deployment by named BigQuery owners.</li>
+              <li><strong>Environment promotion:</strong> <code>main-dev</code> mirrors the dev GCP project; release branches into <code>main</code> mirror prod. Project IDs and dataset names are parameterised so the same artefacts work cleanly across environments.</li>
+            </ul>
+          </section>
+
+          <section class="initiative-block initiative-block--feature">
+            <h3>Outcome</h3>
+            <ul>
+              <li><strong>~5 days → 1–2 days</strong> for representative use cases inside my team after adoption.</li>
+              <li><strong>Endorsed by leadership</strong> after the POC and rolled out at the team level; subsequently held up as the reference pattern other Ashley teams follow for their databases.</li>
+              <li><strong>Zero loss of accountability:</strong> every change is still gated by human PR review and executed by a small set of BigQuery owners, addressing the original leadership concern by design rather than by policy.</li>
+              <li><strong>Currently evolving</strong> toward CI/CD on PR merge to remove manual deployment risk while preserving the PR-level human gate.</li>
+            </ul>
+          </section>
+        </div>
+
+        <p class="stack">BigQuery · GCS · Augment Code · Git · GitHub PRs · INFORMATION_SCHEMA · PowerShell · JSON schemas</p>
       </article>
     </section>
 
-    <section id="metrics" class="section shell reveal" aria-labelledby="metricsTitle">
+    <section id="architecture" class="section shell reveal" aria-labelledby="architectureTitle">
       <div class="section-head">
-        <p class="kicker">Outcomes</p>
-        <h2 id="metricsTitle">Measured impact</h2>
+        <p class="kicker">Reference Architecture</p>
+        <h2 id="architectureTitle">Near real-time CDC pipeline at enterprise scale</h2>
       </div>
-      <div class="metrics-grid">
-        <article class="metric-card">
-          <p class="metric-value" data-target="80" data-suffix="%">0%</p>
-          <p class="metric-label">Productivity Gain</p>
-        </article>
-        <article class="metric-card">
-          <p class="metric-value" data-target="11" data-suffix="">0</p>
-          <p class="metric-label">POCs Beyond Target</p>
-        </article>
-        <article class="metric-card">
-          <p class="metric-value" data-target="22" data-suffix="">0</p>
-          <p class="metric-label">Process Improvements</p>
-        </article>
-        <article class="metric-card">
-          <p class="metric-value" data-target="15" data-suffix="TB+">0</p>
-          <p class="metric-label">Enterprise Data Scale</p>
-        </article>
-      </div>
-      <p class="metric-story" id="metricsStory" aria-live="polite">Click Impact Tour to run a 4-step walkthrough of these outcomes.</p>
+      <article class="card architecture-card">
+        <div class="architecture-story">
+          <div>
+            <p><strong>Problem.</strong> Operational systems held the truth, but analytics consumers needed fresh, query-ready data at 15&nbsp;TB+ scale without straining the source databases or losing change events on failure.</p>
+            <p><strong>Approach.</strong> Capture row-level change events at the source, fan them through a managed event bus, transform with a streaming engine, and land curated tables in the warehouse with full lineage, retries, and KQL-based alerting baked into delivery.</p>
+            <p><strong>Outcome.</strong> A repeatable pattern that moved change events from source to dashboard in near real time, kept producer load steady, and exposed every failure through actionable alerts instead of silent drift.</p>
+          </div>
+          <ul class="architecture-callouts" aria-label="Pipeline guarantees">
+            <li><span class="callout-label">Freshness</span><span class="callout-value">Seconds to single-digit minutes</span></li>
+            <li><span class="callout-label">Scale</span><span class="callout-value">15&nbsp;TB+ active workloads</span></li>
+            <li><span class="callout-label">Reliability</span><span class="callout-value">At-least-once, idempotent merge</span></li>
+            <li><span class="callout-label">Observability</span><span class="callout-value">Lineage · KQL alerts · runbooks</span></li>
+          </ul>
+        </div>
+        <div class="architecture-wrap" aria-label="Annotated CDC pipeline diagram">
+          <svg viewBox="0 0 920 320" role="img" aria-label="Source database to warehouse pipeline with CDC capture, event hub, streaming transform, curated zone, and serving with monitoring">
+            <defs>
+              <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0,0 L10,5 L0,10 z" class="arrow-head"/>
+              </marker>
+            </defs>
+
+            <!-- Stage 1: Source -->
+            <g class="stage arch-stage" data-stage="source" tabindex="0" role="button" aria-label="Source stage details">
+              <rect x="20" y="110" width="140" height="80" rx="12"/>
+              <text x="90" y="142" text-anchor="middle" class="node-title">Source DB</text>
+              <text x="90" y="162" text-anchor="middle" class="node-sub">SQL / NoSQL</text>
+              <text x="90" y="200" text-anchor="middle" class="stage-label">Operational</text>
+            </g>
+
+            <!-- Stage 2: CDC Capture -->
+            <g class="stage arch-stage" data-stage="capture" tabindex="0" role="button" aria-label="CDC capture stage details">
+              <rect x="200" y="110" width="150" height="80" rx="12"/>
+              <text x="275" y="142" text-anchor="middle" class="node-title">CDC Capture</text>
+              <text x="275" y="162" text-anchor="middle" class="node-sub">Debezium / Native</text>
+              <text x="275" y="200" text-anchor="middle" class="stage-label">Capture</text>
+            </g>
+
+            <!-- Stage 3: Event Bus -->
+            <g class="stage arch-stage" data-stage="transport" tabindex="0" role="button" aria-label="Transport stage details">
+              <rect x="390" y="110" width="160" height="80" rx="12"/>
+              <text x="470" y="142" text-anchor="middle" class="node-title">Event Hub / Pub-Sub</text>
+              <text x="470" y="162" text-anchor="middle" class="node-sub">Partitioned, replayable</text>
+              <text x="470" y="200" text-anchor="middle" class="stage-label">Transport</text>
+            </g>
+
+            <!-- Stage 4: Transform -->
+            <g class="stage arch-stage" data-stage="transform" tabindex="0" role="button" aria-label="Transform stage details">
+              <rect x="590" y="60" width="160" height="70" rx="12"/>
+              <text x="670" y="90" text-anchor="middle" class="node-title">Dataflow / ADF</text>
+              <text x="670" y="110" text-anchor="middle" class="node-sub">Stream + micro-batch</text>
+
+              <rect x="590" y="170" width="160" height="70" rx="12"/>
+              <text x="670" y="200" text-anchor="middle" class="node-title">Databricks</text>
+              <text x="670" y="220" text-anchor="middle" class="node-sub">Curate · Enrich · Dedup</text>
+              <text x="670" y="270" text-anchor="middle" class="stage-label">Transform</text>
+            </g>
+
+            <!-- Stage 5: Serve -->
+            <g class="stage arch-stage" data-stage="serve" tabindex="0" role="button" aria-label="Serve stage details">
+              <rect x="780" y="60" width="120" height="70" rx="12"/>
+              <text x="840" y="90" text-anchor="middle" class="node-title">BigQuery</text>
+              <text x="840" y="110" text-anchor="middle" class="node-sub">Synapse · Fabric</text>
+
+              <rect x="780" y="170" width="120" height="70" rx="12"/>
+              <text x="840" y="200" text-anchor="middle" class="node-title">Power BI</text>
+              <text x="840" y="220" text-anchor="middle" class="node-sub">KQL Alerts</text>
+              <text x="840" y="270" text-anchor="middle" class="stage-label">Serve</text>
+            </g>
+
+            <!-- Flows -->
+            <line x1="160" y1="150" x2="200" y2="150" marker-end="url(#arr)"/>
+            <line x1="350" y1="150" x2="390" y2="150" marker-end="url(#arr)"/>
+            <line x1="550" y1="140" x2="590" y2="95" marker-end="url(#arr)"/>
+            <line x1="550" y1="160" x2="590" y2="205" marker-end="url(#arr)"/>
+            <line x1="750" y1="95" x2="780" y2="95" marker-end="url(#arr)"/>
+            <line x1="750" y1="205" x2="780" y2="205" marker-end="url(#arr)"/>
+            <line x1="840" y1="130" x2="840" y2="170" class="serve-link"/>
+
+            <!-- Annotations -->
+            <text x="180" y="100" text-anchor="middle" class="annotation">low-impact reads</text>
+            <text x="370" y="100" text-anchor="middle" class="annotation">change events</text>
+            <text x="568" y="50" text-anchor="middle" class="annotation">near real-time</text>
+            <text x="568" y="270" text-anchor="middle" class="annotation">heavy enrichment</text>
+            <text x="765" y="50" text-anchor="middle" class="annotation">query-ready</text>
+            <text x="765" y="270" text-anchor="middle" class="annotation">consumer surface</text>
+          </svg>
+        </div>
+        <aside class="arch-detail" id="archDetail" aria-live="polite">
+          <p class="arch-detail-hint">Hover, focus or tap any stage above to see what runs there in production.</p>
+        </aside>
+        <p class="stack">CDC · Event Hub / Pub-Sub · Dataflow · ADF · Databricks · BigQuery · Synapse · Power BI · KQL</p>
+        <p class="architecture-note">Pattern distilled from production delivery at Ashley and prior enterprise programs. Tooling adapts to the cloud in play; the contract (capture → transform → serve → observe) stays the same.</p>
+      </article>
     </section>
+
+    <section id="timeline" class="section shell reveal" aria-labelledby="timelineTitle">
+      <div class="section-head">
+        <p class="kicker">Experience</p>
+        <h2 id="timelineTitle">Delivery timeline with outcomes</h2>
+      </div>
+      <div class="timeline">
+        <p class="timeline-summary">Total experience: <strong data-experience-since="2022-06">--</strong> since June 2022.</p>
+        <article class="timeline-item" data-employer="ashley">
+          <span class="date-pill">Dec 2024 – Present</span>
+          <h3>Data Engineer &middot; Ashley Global Capability Center</h3>
+          <ul class="timeline-list">
+            <li><strong>Designed and led adoption of the org's first AI-integrated BigQuery SDLC pattern</strong> &mdash; repo-first operating model with AI guardrails and human-gated deployment. Cut representative delivery from ~5 days to 1–2 days and became the reference other Ashley teams follow. <a href="#initiative">See the initiative →</a></li>
+            <li>Spearheaded GCP data platforms with BigQuery, Dataflow, and Cloud Functions for 15TB+ workloads.</li>
+            <li>Implemented CDC and integration frameworks across heterogeneous systems with .NET Function Apps and APIs.</li>
+            <li>Introduced AI-assisted workflows that contributed to 80% productivity improvement in delivery cycles.</li>
+          </ul>
+        </article>
+        <article class="timeline-item" data-employer="ashvad">
+          <span class="date-pill">Jul 2023 – Dec 2024</span>
+          <h3>Data Engineer &middot; Ashvad Tech Private Limited</h3>
+          <ul class="timeline-list">
+            <li>Built scalable ETL pipelines using Azure Data Factory and Synapse for enterprise reporting and analytics.</li>
+            <li>Delivered .NET Web API integration services and Hangfire-based orchestration for automated workflows.</li>
+            <li>Supported migration to Entra-only authentication and strengthened data access governance.</li>
+          </ul>
+        </article>
+        <article class="timeline-item" data-employer="provana">
+          <span class="date-pill">Jul 2022 – Jul 2023</span>
+          <h3>Data Engineer &middot; Provana</h3>
+          <ul class="timeline-list">
+            <li>Developed automated ETL frameworks in ADF and Synapse for repeatable onboarding and operations.</li>
+            <li>Configured Logic Apps and KQL-driven monitoring patterns for proactive incident handling.</li>
+            <li>Improved operational throughput through workflow standardization and automation.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <aside class="pull-quote reveal" aria-label="Internal recognition">
+      <blockquote>
+        &ldquo;For hands-on, deep-dive problem solving on complex production issues.&rdquo;
+      </blockquote>
+      <cite>&mdash; Dirty Fingernail Award citation, Ashley GCC (2025)</cite>
+    </aside>
 
     <section id="projects" class="section shell reveal" aria-labelledby="projectsTitle">
       <div class="section-head projects-head">
         <div>
-          <p class="kicker">Portfolio</p>
-          <h2 id="projectsTitle">Interactive project explorer</h2>
+          <p class="kicker">Personal repos</p>
+          <h2 id="projectsTitle">Sandbox &amp; side work</h2>
+          <p class="projects-note">A selection of my <strong>personal GitHub repos</strong> &mdash; sandboxes where I prototype patterns and explore tools. Employer work is covered in <a href="#timeline">Experience</a> and the <a href="#initiative">Signature Initiative</a>.</p>
         </div>
         <div class="filter-row" role="tablist" aria-label="Project filters">
           <button class="chip is-active" data-filter="all" role="tab" aria-selected="true">All</button>
@@ -164,7 +359,7 @@
           <h3>TripAdvisor Reviews Analysis</h3>
           <p><strong>Problem:</strong> Build robust sentiment analytics with business-ready reporting outputs.</p>
           <p><strong>Built:</strong> End-to-end Azure analytics pipeline using Synapse, Data Lake, Data Warehouse, Power BI, and Azure ML.</p>
-          <p><strong>Result:</strong> Delivered analytics-ready model and visualization stack for faster decision support.</p>
+          <p><strong>Result:</strong> Personal sandbox &mdash; produced a working end-to-end pattern (ingest &rarr; warehouse &rarr; ML &rarr; Power BI) on sample TripAdvisor data; useful as a reference layout, not a production deployment.</p>
           <p class="stack">Synapse · Data Lake · Data Warehouse · Power BI · Azure ML</p>
           <a href="https://github.com/NishanthRajkumar/TripAdvisor-Reviews-Analysis-AZURE" target="_blank" rel="noreferrer" data-track="project_tripadvisor_click">Open Repository</a>
         </article>
@@ -174,121 +369,88 @@
           <h3>Azure Real-Time Twitter Data</h3>
           <p><strong>Problem:</strong> Capture social signals and process them continuously for near real-time analysis.</p>
           <p><strong>Built:</strong> Streaming workflow with Azure Functions, Event Hub, and Stream Analytics orchestrated through Python.</p>
-          <p><strong>Result:</strong> Enabled low-latency ingestion and processing pipeline for signal-driven use cases.</p>
+          <p><strong>Result:</strong> Personal sandbox &mdash; a runnable proof of an Azure streaming wiring (Function &rarr; Event Hub &rarr; Stream Analytics) built to learn the moving parts, not to operate continuously.</p>
           <p class="stack">Python · Azure Functions · Event Hub · Stream Analytics</p>
           <a href="https://github.com/NishanthRajkumar/Azure-RealTime-Twitter-Data" target="_blank" rel="noreferrer" data-track="project_twitter_click">Open Repository</a>
         </article>
 
-        <article class="card project-card architecture-card" data-tags="azure api analytics">
-          <p class="tagline">Architecture Case Study</p>
-          <h3>Cross-Cloud Integration Blueprint</h3>
-          <p><strong>Scenario:</strong> Standardize high-volume enterprise ingestion, transformation, and serving across GCP and Azure systems.</p>
-          <div class="architecture-wrap" aria-label="Architecture diagram">
-            <svg viewBox="0 0 680 260" role="img" aria-label="Cross-cloud pipeline from source systems to serving and monitoring">
-              <rect x="20" y="70" width="120" height="60" rx="10"></rect>
-              <text x="80" y="104" text-anchor="middle">Source Apps</text>
-              <rect x="180" y="30" width="130" height="60" rx="10"></rect>
-              <text x="245" y="64" text-anchor="middle">Event Hub / CDC</text>
-              <rect x="180" y="150" width="130" height="60" rx="10"></rect>
-              <text x="245" y="184" text-anchor="middle">APIs / Functions</text>
-              <rect x="350" y="30" width="130" height="60" rx="10"></rect>
-              <text x="415" y="64" text-anchor="middle">Dataflow / ADF</text>
-              <rect x="350" y="150" width="130" height="60" rx="10"></rect>
-              <text x="415" y="184" text-anchor="middle">Databricks</text>
-              <rect x="520" y="70" width="140" height="60" rx="10"></rect>
-              <text x="590" y="104" text-anchor="middle">BQ / Synapse</text>
-              <rect x="520" y="170" width="140" height="50" rx="10"></rect>
-              <text x="590" y="200" text-anchor="middle">Power BI / Alerts</text>
-              <line x1="140" y1="100" x2="180" y2="60"></line>
-              <line x1="140" y1="100" x2="180" y2="180"></line>
-              <line x1="310" y1="60" x2="350" y2="60"></line>
-              <line x1="310" y1="180" x2="350" y2="180"></line>
-              <line x1="480" y1="60" x2="520" y2="100"></line>
-              <line x1="480" y1="180" x2="520" y2="100"></line>
-              <line x1="590" y1="130" x2="590" y2="170"></line>
-            </svg>
-          </div>
-          <p><strong>Result:</strong> Resilient multi-path ingestion and transformation design for reliable analytics at enterprise scale.</p>
-          <p class="stack">Event Hub · APIs · Functions · Dataflow · ADF · Databricks · BigQuery · Synapse · Power BI</p>
-          <a href="https://github.com/NishanthRajkumar/CosmosDB-BooksLibrary-API" target="_blank" rel="noreferrer" data-track="project_cosmos_click">Reference Repository</a>
+        <article class="card project-card" data-tags="api">
+          <p class="tagline">Cloud-Native API</p>
+          <h3>Cosmos DB Books Library API</h3>
+          <p><strong>Problem:</strong> Demonstrate a practical REST API backed by a globally distributed NoSQL store with clean data-access patterns.</p>
+          <p><strong>Built:</strong> Python service exposing CRUD endpoints over an Azure Cosmos DB container with environment-driven configuration.</p>
+          <p><strong>Result:</strong> Personal sandbox &mdash; a compact, deployable reference for Cosmos-backed CRUD and document modelling; intended as a starting template, not a live service.</p>
+          <p class="stack">Python · REST · Azure Cosmos DB</p>
+          <a href="https://github.com/NishanthRajkumar/CosmosDB-BooksLibrary-API" target="_blank" rel="noreferrer" data-track="project_cosmos_click">Open Repository</a>
         </article>
       </div>
       <p class="empty-state" id="emptyState" hidden>No projects match this filter yet. Try another view.</p>
     </section>
 
-    <section id="timeline" class="section shell reveal" aria-labelledby="timelineTitle">
+    <section id="now" class="section shell reveal" aria-labelledby="nowTitle">
       <div class="section-head">
-        <p class="kicker">Experience</p>
-        <h2 id="timelineTitle">Delivery timeline with outcomes</h2>
+        <p class="kicker">Now</p>
+        <h2 id="nowTitle">Currently building &amp; learning</h2>
       </div>
-      <div class="timeline">
-        <article class="timeline-item">
-          <p class="timeline-year">Dec 2024 - Present</p>
-          <h3>Data Engineer · Ashley Global Capability Center</h3>
-          <ul class="timeline-list">
-            <li>Spearheaded GCP data platforms with BigQuery, Dataflow, and Cloud Functions for 15TB+ workloads.</li>
-            <li>Implemented CDC and integration frameworks across heterogeneous systems with .NET Function Apps and APIs.</li>
-            <li>Introduced AI-assisted workflows that contributed to 80% productivity improvement in delivery cycles.</li>
-          </ul>
+      <div class="now-strip">
+        <article class="now-card">
+          <p class="now-label">Building</p>
+          <p class="now-body">CI/CD on PR merge for the BigQuery SDLC &mdash; closing the last manual deployment gap while keeping the human PR gate.</p>
         </article>
-        <article class="timeline-item">
-          <p class="timeline-year">Jul 2023 - Dec 2024</p>
-          <h3>Data Engineer · Ashvad Tech Private Limited</h3>
-          <ul class="timeline-list">
-            <li>Built scalable ETL pipelines using Azure Data Factory and Synapse for enterprise reporting and analytics.</li>
-            <li>Delivered .NET Web API integration services and Hangfire-based orchestration for automated workflows.</li>
-            <li>Supported migration to Entra-only authentication and strengthened data access governance.</li>
-          </ul>
+        <article class="now-card">
+          <p class="now-label">Building</p>
+          <p class="now-body">Generated change-script tooling that diffs the repo against a target BigQuery project and emits an auditable migration plan.</p>
         </article>
-        <article class="timeline-item">
-          <p class="timeline-year">Jul 2022 - Jul 2023</p>
-          <h3>Data Engineer · Provana</h3>
-          <ul class="timeline-list">
-            <li>Developed automated ETL frameworks in ADF and Synapse for repeatable onboarding and operations.</li>
-            <li>Configured Logic Apps and KQL-driven monitoring patterns for proactive incident handling.</li>
-            <li>Improved operational throughput through workflow standardization and automation.</li>
-          </ul>
+        <article class="now-card">
+          <p class="now-label">Learning</p>
+          <p class="now-body">Microsoft Fabric Real-Time Intelligence &mdash; eventstreams, KQL DB, and Activator patterns for low-latency analytics.</p>
         </article>
       </div>
     </section>
 
-    <section id="credentials" class="section shell reveal" aria-labelledby="credentialsTitle">
+    <section id="week-one" class="section shell reveal" aria-labelledby="weekOneTitle">
       <div class="section-head">
-        <p class="kicker">Credentials</p>
-        <h2 id="credentialsTitle">Awards, certifications, and role fit</h2>
+        <p class="kicker">Week 1</p>
+        <h2 id="weekOneTitle">What I'd build for your team in week 1</h2>
       </div>
-      <div class="credentials-grid">
-        <article class="card">
-          <h3>Awards and Recognition</h3>
-          <ul class="simple-list">
-            <li>Dirty Fingernail Award (2025)</li>
-            <li>Above and Beyond Award of the Quarter (Q4 2025)</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>Certifications</h3>
-          <ul class="simple-list">
-            <li>Microsoft Certified: Azure Data Scientist Associate (Recertified Nov 2025)</li>
-            <li>DeepLearning.AI TensorFlow Developer Specialization</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>Open To Roles</h3>
-          <ul class="simple-list">
-            <li>Senior Data Engineer</li>
-            <li>Cloud Data Platform Engineer</li>
-            <li>Integration-Focused Data Engineering Roles</li>
-            <li>Location: Chennai, India · Open to remote and hybrid collaboration</li>
-          </ul>
-        </article>
-      </div>
+      <article class="card week-one-card" aria-labelledby="weekOneTitle">
+        <ul class="week-one-list">
+          <li><strong>Audit one critical pipeline</strong> for observability gaps &mdash; lineage, freshness SLOs, KQL alert coverage &mdash; and ship a one-page risk note.</li>
+          <li><strong>Stand up a CDC POC</strong> on a non-prod source &rarr; event hub &rarr; curated table, with replay and idempotent merge proven end-to-end.</li>
+          <li><strong>Document one repo-first standard</strong> for AI-assisted change (naming, audit columns, PR gate) so the next 10 changes follow the same shape.</li>
+        </ul>
+        <p class="week-one-foot">Concrete, low-blast-radius, designed to surface what to invest in next.</p>
+      </article>
     </section>
 
     <section id="contact" class="section shell reveal" aria-labelledby="contactTitle">
       <div class="section-head">
-        <p class="kicker">Connect</p>
+        <p class="kicker">Credentials &amp; contact</p>
         <h2 id="contactTitle">Let us build something meaningful</h2>
       </div>
+
+      <div class="credentials-strip" aria-label="Awards, certifications and role fit">
+        <div class="cred-block">
+          <p class="cred-label">Awards</p>
+          <div class="cred-pill-row">
+            <span class="cred-pill">Dirty Fingernail Award &middot; 2025</span>
+            <span class="cred-pill">Above &amp; Beyond &middot; Q4 2025</span>
+          </div>
+          <p class="cred-note">Internal recognition for hands-on, deep-dive problem solving on complex production issues.</p>
+        </div>
+        <div class="cred-block">
+          <p class="cred-label">Certifications</p>
+          <div class="cred-pill-row">
+            <span class="cred-pill">Microsoft Azure Data Scientist Associate &middot; Recert Nov 2025</span>
+            <span class="cred-pill">DeepLearning.AI TensorFlow Developer</span>
+          </div>
+        </div>
+        <div class="cred-block">
+          <p class="cred-label">Open to</p>
+          <p class="cred-line">Data Engineer &middot; Cloud Data Platform Engineer &middot; Chennai, India &middot; remote &amp; hybrid welcome</p>
+        </div>
+      </div>
+
       <div class="contact-panel">
         <p>If your team is building data platforms, integrating cloud ecosystems, or modernizing delivery with reliable AI-assisted engineering, I am open to collaborating.</p>
         <div class="hero-actions">
@@ -306,6 +468,18 @@
 
   <button id="toTop" class="to-top" aria-label="Scroll to top">Top</button>
 
-  <script src="script.js"></script>
+  <footer class="site-footer shell">
+    <div class="footer-social" aria-label="Connect">
+      <a href="https://www.linkedin.com/in/nishanthrajkumar" target="_blank" rel="noreferrer" aria-label="LinkedIn">LinkedIn</a>
+      <span aria-hidden="true">·</span>
+      <a href="https://github.com/NishanthRajkumar" target="_blank" rel="noreferrer" aria-label="GitHub">GitHub</a>
+      <span aria-hidden="true">·</span>
+      <a href="mailto:nishrk97@outlook.com" aria-label="Email">Email</a>
+    </div>
+    <p>© <span id="footerYear">2026</span> Nishanth Rajkumar &middot; Built in plain HTML, CSS &amp; JS &middot; <a href="https://github.com/NishanthRajkumar/NishanthRajkumar" target="_blank" rel="noreferrer">View source</a></p>
+    <p class="footer-meta">Last updated: <time id="lastUpdated" datetime="2026-05-23">May 2026</time></p>
+  </footer>
+
+  <script src="script.js" defer></script>
 </body>
 </html>

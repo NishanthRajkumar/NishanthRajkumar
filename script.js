@@ -4,11 +4,75 @@ const filterButtons = document.querySelectorAll(".chip");
 const projectCards = document.querySelectorAll(".project-card");
 const emptyState = document.getElementById("emptyState");
 const revealItems = document.querySelectorAll(".reveal");
-const metricValues = document.querySelectorAll(".metric-value");
 const toTopButton = document.getElementById("toTop");
 const shuffleHighlights = document.getElementById("shuffleHighlights");
-const metricsSection = document.getElementById("metrics");
+const proofSection = document.querySelector(".proof-strip");
 const metricsStory = document.getElementById("metricsStory");
+const themeToggle = document.getElementById("themeToggle");
+const footerYear = document.getElementById("footerYear");
+const experienceTargets = document.querySelectorAll("[data-experience-since]");
+
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+if (footerYear) {
+  footerYear.textContent = String(new Date().getFullYear());
+}
+
+function computeExperience(startIso) {
+  const [yearStr, monthStr] = (startIso || "").split("-");
+  const startYear = Number(yearStr);
+  const startMonth = Number(monthStr) - 1;
+  if (!Number.isFinite(startYear) || !Number.isFinite(startMonth)) {
+    return null;
+  }
+  const now = new Date();
+  let years = now.getFullYear() - startYear;
+  let months = now.getMonth() - startMonth;
+  if (months < 0) {
+    years -= 1;
+    months += 12;
+  }
+  return { years, months };
+}
+
+function formatExperience(exp, format) {
+  if (!exp) return "";
+  if (format === "verbose") {
+    const y = `${exp.years} year${exp.years === 1 ? "" : "s"}`;
+    const m = exp.months > 0 ? ` and ${exp.months} month${exp.months === 1 ? "" : "s"}` : "";
+    return `${y}${m}`;
+  }
+  return `${exp.years}y ${exp.months}m`;
+}
+
+experienceTargets.forEach((el) => {
+  const exp = computeExperience(el.dataset.experienceSince);
+  if (!exp) return;
+  el.textContent = formatExperience(exp, el.dataset.experienceFormat);
+});
+
+if (themeToggle) {
+  function syncThemeIcon() {
+    const current = document.documentElement.getAttribute("data-theme") || "light";
+    const icon = themeToggle.querySelector(".theme-icon");
+    if (icon) {
+      icon.textContent = current === "dark" ? "\u2600" : "\u263D";
+    }
+    themeToggle.setAttribute("aria-label", current === "dark" ? "Switch to light theme" : "Switch to dark theme");
+  }
+  syncThemeIcon();
+  themeToggle.addEventListener("click", () => {
+    const current = document.documentElement.getAttribute("data-theme") || "light";
+    const next = current === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next);
+    try {
+      localStorage.setItem("nr-theme", next);
+    } catch (e) {
+      /* ignore */
+    }
+    syncThemeIcon();
+  });
+}
 
 if (menuToggle && navLinks) {
   menuToggle.addEventListener("click", () => {
@@ -86,21 +150,33 @@ function animateCounter(element) {
   requestAnimationFrame(tick);
 }
 
-const metricObserver = new IntersectionObserver(
-  (entries, observer) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) {
-        return;
-      }
-
-      animateCounter(entry.target);
-      observer.unobserve(entry.target);
-    });
-  },
-  { threshold: 0.35 }
-);
-
-metricValues.forEach((metric) => metricObserver.observe(metric));
+// Scrollspy: highlight nav link of the section currently in view.
+const spyTargets = Array.from(document.querySelectorAll("main > section[id]"));
+const spyLinks = new Map();
+document.querySelectorAll(".nav-links a[href^=\"#\"]").forEach((link) => {
+  const id = link.getAttribute("href").slice(1);
+  if (id) spyLinks.set(id, link);
+});
+if (spyTargets.length && spyLinks.size) {
+  const spyObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const link = spyLinks.get(entry.target.id);
+        if (!link) return;
+        if (entry.isIntersecting) {
+          spyLinks.forEach((l) => {
+            l.classList.remove("is-current");
+            l.removeAttribute("aria-current");
+          });
+          link.classList.add("is-current");
+          link.setAttribute("aria-current", "true");
+        }
+      });
+    },
+    { rootMargin: "-40% 0px -55% 0px", threshold: 0 }
+  );
+  spyTargets.forEach((section) => spyObserver.observe(section));
+}
 
 if (toTopButton) {
   window.addEventListener("scroll", () => {
@@ -114,7 +190,8 @@ if (toTopButton) {
 }
 
 if (shuffleHighlights) {
-  const metricCards = Array.from(document.querySelectorAll(".metric-card"));
+  const tourCards = Array.from(document.querySelectorAll("[data-tour-step]"))
+    .sort((a, b) => Number(a.dataset.tourStep) - Number(b.dataset.tourStep));
   const stories = [
     "Productivity Gain: AI-assisted workflows reduced delivery friction and improved turnaround speed by 80%.",
     "POCs Beyond Target: Delivery capacity outperformed plan with 11 proof-of-concepts completed above target.",
@@ -127,14 +204,14 @@ if (shuffleHighlights) {
   const defaultButtonLabel = "Impact Tour";
 
   function highlightMetric(index) {
-    metricCards.forEach((metricCard, idx) => {
-      metricCard.classList.toggle("active-metric", idx === index);
-      metricCard.classList.remove("flash");
+    tourCards.forEach((tourCard, idx) => {
+      tourCard.classList.toggle("active-metric", idx === index);
+      tourCard.classList.remove("flash");
 
       if (idx === index) {
         // Force reflow so repeated highlights retrigger the animation.
-        void metricCard.offsetWidth;
-        metricCard.classList.add("flash");
+        void tourCard.offsetWidth;
+        tourCard.classList.add("flash");
       }
     });
 
@@ -158,11 +235,11 @@ if (shuffleHighlights) {
   }
 
   function runTourStep() {
-    activeMetricIndex = (activeMetricIndex + 1) % metricCards.length;
+    activeMetricIndex = (activeMetricIndex + 1) % tourCards.length;
     highlightMetric(activeMetricIndex);
-    shuffleHighlights.textContent = `Impact Tour (${activeMetricIndex + 1}/4)`;
+    shuffleHighlights.textContent = `Impact Tour (${activeMetricIndex + 1}/${tourCards.length})`;
 
-    if (activeMetricIndex === metricCards.length - 1) {
+    if (activeMetricIndex === tourCards.length - 1) {
       // Stop automatically after one full walkthrough.
       setTimeout(() => {
         stopTour(false);
@@ -171,20 +248,29 @@ if (shuffleHighlights) {
   }
 
   shuffleHighlights.addEventListener("click", () => {
-    if (tourTimerId) {
+    if (tourTimerId || !tourCards.length) {
       return;
     }
 
-    if (metricsSection) {
-      metricsSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (proofSection) {
+      proofSection.scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth", block: "start" });
     }
 
     activeMetricIndex = -1;
     shuffleHighlights.disabled = true;
     runTourStep();
 
+    if (reducedMotion) {
+      // Skip auto-advance for users who prefer reduced motion; reveal all then stop.
+      for (let i = 1; i < tourCards.length; i += 1) {
+        runTourStep();
+      }
+      stopTour(false);
+      return;
+    }
+
     tourTimerId = setInterval(() => {
-      if (activeMetricIndex >= metricCards.length - 1) {
+      if (activeMetricIndex >= tourCards.length - 1) {
         stopTour(false);
         return;
       }
@@ -252,22 +338,10 @@ async function linkExists(url) {
   }
 }
 
-function trackClickEvent(eventKey) {
-  if (!eventKey) {
-    return;
-  }
-
-  const namespace = "nishanthrajkumar-portfolio";
-  const endpoint = `https://api.countapi.xyz/hit/${namespace}/${encodeURIComponent(eventKey)}`;
-
-  if (navigator.sendBeacon) {
-    navigator.sendBeacon(endpoint);
-    return;
-  }
-
-  fetch(endpoint, { method: "GET", mode: "no-cors", keepalive: true }).catch(() => {
-    // Ignore analytics failures to keep UX uninterrupted.
-  });
+function trackClickEvent(_eventKey) {
+  // Analytics intentionally disabled. The previous integration relied on
+  // api.countapi.xyz, which was discontinued. Plug in a privacy-friendly
+  // analytics provider here (e.g. GoatCounter, Plausible, Umami) if desired.
 }
 
 trackedLinks.forEach((link) => {
@@ -313,3 +387,82 @@ directDownloadLinks.forEach((link) => {
     }
   });
 });
+
+// === Batch 3 (E8 auto-tour, F1 architecture interactivity) ===
+
+// E8: Auto-play Impact Tour once on first scroll into view (gated by localStorage + reduced motion).
+(function () {
+  if (!shuffleHighlights || !proofSection || reducedMotion) return;
+  let played = false;
+  try { played = localStorage.getItem("nr-tour-autoplayed") === "1"; } catch (e) { /* ignore */ }
+  if (played) return;
+
+  const autoObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      autoObserver.disconnect();
+      try { localStorage.setItem("nr-tour-autoplayed", "1"); } catch (e) { /* ignore */ }
+      setTimeout(() => shuffleHighlights.click(), 750);
+    });
+  }, { threshold: 0.4 });
+  autoObserver.observe(proofSection);
+})();
+
+// F1: Interactive architecture diagram — hover/focus a stage to populate detail panel.
+(function () {
+  const archDetail = document.getElementById("archDetail");
+  if (!archDetail) return;
+  const stages = document.querySelectorAll(".arch-stage");
+  if (!stages.length) return;
+
+  const stageData = {
+    source: {
+      title: "Source — Operational systems of record",
+      body: "Transactional databases that own the truth. We read change events rather than running heavy analytical queries, so producers see negligible extra load.",
+      stack: "SQL Server · PostgreSQL · MongoDB · Oracle",
+    },
+    capture: {
+      title: "CDC Capture — Row-level change events",
+      body: "Native CDC (e.g. SQL Server CDC, MongoDB change streams) or Debezium-style log readers turn inserts/updates/deletes into ordered, replayable events.",
+      stack: "Debezium · SQL Server CDC · Mongo change streams",
+    },
+    transport: {
+      title: "Transport — Partitioned, replayable bus",
+      body: "Events land on a managed event bus partitioned by entity key. Replay windows let us recover from downstream failures without re-touching the source.",
+      stack: "Azure Event Hubs · Google Pub/Sub · Kafka",
+    },
+    transform: {
+      title: "Transform — Stream + micro-batch enrichment",
+      body: "Dataflow / ADF handles low-latency streaming joins; Databricks handles heavier curation, dedup, and SCD logic. Idempotent merges keep at-least-once delivery safe.",
+      stack: "Dataflow · ADF · Databricks · Delta · PySpark",
+    },
+    serve: {
+      title: "Serve — Query-ready warehouse + alerts",
+      body: "Curated tables land in BigQuery / Synapse / Fabric for analytics consumers, with Power BI on top. KQL alert rules close the loop on freshness, lag, and failure.",
+      stack: "BigQuery · Synapse · Microsoft Fabric · Power BI · KQL",
+    },
+  };
+
+  function render(key) {
+    const data = stageData[key];
+    if (!data) return;
+    stages.forEach((s) => s.classList.toggle("is-active", s.dataset.stage === key));
+    archDetail.innerHTML =
+      "<h4>" + data.title + "</h4>" +
+      "<p>" + data.body + "</p>" +
+      "<p class=\"arch-stack\">" + data.stack + "</p>";
+  }
+
+  stages.forEach((stage) => {
+    const key = stage.dataset.stage;
+    stage.addEventListener("mouseenter", () => render(key));
+    stage.addEventListener("focus", () => render(key));
+    stage.addEventListener("click", () => render(key));
+    stage.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        render(key);
+      }
+    });
+  });
+})();

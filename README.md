@@ -20,6 +20,18 @@ My core focus areas:
 - Distributed data engineering with Databricks and Spark ecosystems
 - AI-assisted engineering workflows for faster, safer delivery
 
+### Featured Initiative
+
+**AI-integrated BigQuery SDLC — a repo-first operating model**
+
+Self-driven initiative at Ashley to make AI pair-programming safely usable on a warehouse platform that had *no native repo support and zero margin for unreviewed change*.
+
+- **Problem.** AI-first SDLC was accelerating API/UI/backend teams, but BigQuery had no native or third-party way to live in a Git repo — the very context AI tools need. Leadership had legitimate concerns about AI touching databases where changes are not as reversible as code.
+- **Approach.** Exported BigQuery into a repo via `INFORMATION_SCHEMA` (tables, views, routines, functions → SQL + parallel JSON metadata in GCS), authored RFC-2119 style AI standards (naming, audit columns, formatting, JOIN discipline, documentation), and built a human workflow that forbids direct DDL — every structural change flows through feature branch → PR review → generated change script with data-migration steps → deployment by named BigQuery owners. `main-dev` mirrors dev GCP; release branches into `main` mirror prod.
+- **Outcome.** Representative use cases dropped from **~5 days to 1–2 days** for my team. Endorsed by leadership and **now the reference pattern other Ashley teams follow for their databases**. Human accountability preserved at the PR gate by design, not policy. Currently evolving toward CI/CD on PR merge while keeping the PR-level human gate intact.
+
+> Stack: BigQuery · GCS · Augment Code · Git · GitHub PRs · INFORMATION_SCHEMA · PowerShell · JSON schemas
+
 ### At A Glance
 
 | Area | Summary |

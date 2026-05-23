@@ -1,0 +1,2 @@
+# Ignore temp folder. It contains temporary files that are not needed in version control.
+temp/*
