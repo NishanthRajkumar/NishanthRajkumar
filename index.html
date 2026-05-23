@@ -24,6 +24,7 @@
   <meta name="twitter:image" content="https://nishanthrajkumar.me/assets/og-image.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script>
@@ -61,46 +62,49 @@
   </script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <div class="ambient" aria-hidden="true">
     <span class="orb orb-a"></span>
     <span class="orb orb-b"></span>
     <span class="grid-mask"></span>
   </div>
 
-  <header class="site-header" id="top">
-    <nav class="nav shell">
-      <a href="#top" class="brand">Nishanth Rajkumar</a>
-      <div class="nav-controls">
-        <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle color theme" title="Toggle light / dark theme">
-          <span class="theme-icon" aria-hidden="true">◐</span>
-          <span class="sr-only" id="themeLabel">Toggle theme</span>
-        </button>
-        <button id="menuToggle" class="menu-toggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
-      </div>
-      <ul id="navLinks" class="nav-links">
-        <li><a href="#initiative">Initiative</a></li>
-        <li><a href="#architecture">Architecture</a></li>
-        <li><a href="#timeline">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+  <nav class="nav shell" id="siteNav">
+    <a href="#top" class="brand">Nishanth Rajkumar</a>
+    <div class="nav-controls">
+      <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle color theme" title="Toggle light / dark theme">
+        <span class="theme-icon" aria-hidden="true">◐</span>
+        <span class="sr-only" id="themeLabel">Toggle theme</span>
+      </button>
+      <button id="menuToggle" class="menu-toggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
+    </div>
+    <ul id="navLinks" class="nav-links">
+      <li><a href="#initiative">Initiative</a></li>
+      <li><a href="#architecture">Architecture</a></li>
+      <li><a href="#timeline">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <span class="reading-progress" aria-hidden="true"><span class="reading-progress-bar" id="readingProgressBar"></span></span>
+  </nav>
 
+  <header class="site-header" id="top">
     <section class="hero shell" aria-labelledby="heroTitle">
       <div class="hero-copy reveal">
         <a class="spotlight-pill" href="#initiative" aria-label="Jump to signature initiative: AI-integrated BigQuery SDLC">
           <span class="spotlight-badge">Signature Initiative</span>
           <span class="spotlight-text">AI-integrated BigQuery SDLC — now the reference pattern across teams</span>
           <span class="spotlight-arrow" aria-hidden="true">→</span>
+          <span class="spotlight-shimmer" aria-hidden="true"></span>
         </a>
-        <p class="kicker">Cloud Data Engineering</p>
+        <p class="kicker kicker--hero">Cloud Data Engineering</p>
         <h1 id="heroTitle">Designing data systems that stay reliable at enterprise scale.</h1>
         <p class="lede">
           I build integration-heavy data platforms across Azure and GCP, with Databricks-native engineering patterns,
           observability by design, and AI-assisted delivery that compounds team velocity.
         </p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#initiative">See the Initiative</a>
+          <a class="btn btn-primary" href="#initiative">See the Initiative<span class="btn-arrow" aria-hidden="true">→</span></a>
           <a class="btn btn-secondary" href="mailto:nishrk97@outlook.com">Work With Me</a>
           <button class="btn btn-ghost" id="shuffleHighlights"><span class="play-icon" aria-hidden="true">▶</span> Impact Tour</button>
         </div>
@@ -126,19 +130,19 @@
     <section class="proof-strip shell reveal" aria-label="Key proof points">
       <div class="proof-anchor-row">
         <article class="proof-item proof-anchor"><p class="proof-value" data-experience-since="2022-06">--</p><p class="proof-label">Experience</p></article>
-        <article class="proof-item proof-anchor" data-tour-step="3"><p class="proof-value">15TB+</p><p class="proof-label">Data Scale</p></article>
+        <article class="proof-item proof-anchor" data-tour-step="3"><p class="proof-value" data-count="15" data-suffix="TB+">15TB+</p><p class="proof-label">Data Scale</p></article>
       </div>
       <div class="proof-grid proof-secondary-row">
-        <article class="proof-item" data-tour-step="0"><p class="proof-value">80%</p><p class="proof-label">Productivity Gain</p></article>
-        <article class="proof-item" data-tour-step="1"><p class="proof-value">11</p><p class="proof-label">POCs Beyond Target</p></article>
-        <article class="proof-item"><p class="proof-value">14</p><p class="proof-label">Innovation Initiatives</p></article>
-        <article class="proof-item" data-tour-step="2"><p class="proof-value">22</p><p class="proof-label">Operational Improvements</p></article>
+        <article class="proof-item" data-tour-step="0"><p class="proof-value" data-count="80" data-suffix="%">80%</p><p class="proof-label">Productivity Gain</p></article>
+        <article class="proof-item" data-tour-step="1"><p class="proof-value" data-count="11">11</p><p class="proof-label">POCs Beyond Target</p></article>
+        <article class="proof-item"><p class="proof-value" data-count="14">14</p><p class="proof-label">Innovation Initiatives</p></article>
+        <article class="proof-item" data-tour-step="2"><p class="proof-value" data-count="22">22</p><p class="proof-label">Operational Improvements</p></article>
       </div>
       <p class="metric-story" id="metricsStory" aria-live="polite">Click <span aria-hidden="true">▶</span> Impact Tour to run a 4-step walkthrough of these outcomes.</p>
     </section>
   </header>
 
-  <main>
+  <main id="main">
     <section id="initiative" class="section shell reveal" aria-labelledby="initiativeTitle">
       <div class="section-head">
         <p class="kicker">Signature Initiative</p>
@@ -221,6 +225,11 @@
             <!-- Stage 1: Source -->
             <g class="stage arch-stage" data-stage="source" tabindex="0" role="button" aria-label="Source stage details">
               <rect x="20" y="110" width="140" height="80" rx="12"/>
+              <g class="stage-icon" transform="translate(30,120)" aria-hidden="true">
+                <ellipse cx="7" cy="2.5" rx="6" ry="2" fill="none"/>
+                <path d="M1,2.5 V11 a6,2 0 0 0 12,0 V2.5" fill="none"/>
+                <path d="M1,6.5 a6,2 0 0 0 12,0" fill="none"/>
+              </g>
               <text x="90" y="142" text-anchor="middle" class="node-title">Source DB</text>
               <text x="90" y="162" text-anchor="middle" class="node-sub">SQL / NoSQL</text>
               <text x="90" y="200" text-anchor="middle" class="stage-label">Operational</text>
@@ -229,6 +238,10 @@
             <!-- Stage 2: CDC Capture -->
             <g class="stage arch-stage" data-stage="capture" tabindex="0" role="button" aria-label="CDC capture stage details">
               <rect x="200" y="110" width="150" height="80" rx="12"/>
+              <g class="stage-icon" transform="translate(210,120)" aria-hidden="true">
+                <path d="M2,2 H12 M2,12 H12 M4,5 H10 M4,8 H10" fill="none"/>
+                <circle cx="12" cy="5" r="1.4" fill="currentColor" stroke="none"/>
+              </g>
               <text x="275" y="142" text-anchor="middle" class="node-title">CDC Capture</text>
               <text x="275" y="162" text-anchor="middle" class="node-sub">Debezium / Native</text>
               <text x="275" y="200" text-anchor="middle" class="stage-label">Capture</text>
@@ -237,6 +250,9 @@
             <!-- Stage 3: Event Bus -->
             <g class="stage arch-stage" data-stage="transport" tabindex="0" role="button" aria-label="Transport stage details">
               <rect x="390" y="110" width="160" height="80" rx="12"/>
+              <g class="stage-icon" transform="translate(400,120)" aria-hidden="true">
+                <path d="M8,1 L3,8 H7 L6,13 L11,6 H7 L9,1 Z" fill="currentColor" stroke="none"/>
+              </g>
               <text x="470" y="142" text-anchor="middle" class="node-title">Event Hub / Pub-Sub</text>
               <text x="470" y="162" text-anchor="middle" class="node-sub">Partitioned, replayable</text>
               <text x="470" y="200" text-anchor="middle" class="stage-label">Transport</text>
@@ -245,6 +261,10 @@
             <!-- Stage 4: Transform -->
             <g class="stage arch-stage" data-stage="transform" tabindex="0" role="button" aria-label="Transform stage details">
               <rect x="590" y="60" width="160" height="70" rx="12"/>
+              <g class="stage-icon" transform="translate(600,70)" aria-hidden="true">
+                <circle cx="7" cy="7" r="2" fill="none"/>
+                <path d="M7,1 V3 M7,11 V13 M1,7 H3 M11,7 H13 M2.6,2.6 L4,4 M10,10 L11.4,11.4 M2.6,11.4 L4,10 M10,4 L11.4,2.6" fill="none"/>
+              </g>
               <text x="670" y="90" text-anchor="middle" class="node-title">Dataflow / ADF</text>
               <text x="670" y="110" text-anchor="middle" class="node-sub">Stream + micro-batch</text>
 
@@ -257,6 +277,9 @@
             <!-- Stage 5: Serve -->
             <g class="stage arch-stage" data-stage="serve" tabindex="0" role="button" aria-label="Serve stage details">
               <rect x="780" y="60" width="120" height="70" rx="12"/>
+              <g class="stage-icon" transform="translate(790,70)" aria-hidden="true">
+                <path d="M2,12 V9 M5,12 V6 M8,12 V8 M11,12 V3" fill="none" stroke-width="1.8"/>
+              </g>
               <text x="840" y="90" text-anchor="middle" class="node-title">BigQuery</text>
               <text x="840" y="110" text-anchor="middle" class="node-sub">Synapse · Fabric</text>
 
@@ -274,6 +297,12 @@
             <line x1="750" y1="95" x2="780" y2="95" marker-end="url(#arr)"/>
             <line x1="750" y1="205" x2="780" y2="205" marker-end="url(#arr)"/>
             <line x1="840" y1="130" x2="840" y2="170" class="serve-link"/>
+
+            <!-- Round 7: flow pings -->
+            <circle class="flow-ping flow-ping--a" cx="160" cy="150" r="3" aria-hidden="true"/>
+            <circle class="flow-ping flow-ping--b" cx="350" cy="150" r="3" aria-hidden="true"/>
+            <circle class="flow-ping flow-ping--c" cx="750" cy="95" r="3" aria-hidden="true"/>
+            <circle class="flow-ping flow-ping--d" cx="750" cy="205" r="3" aria-hidden="true"/>
 
             <!-- Annotations -->
             <text x="180" y="100" text-anchor="middle" class="annotation">low-impact reads</text>
@@ -299,7 +328,7 @@
       </div>
       <div class="timeline">
         <p class="timeline-summary">Total experience: <strong data-experience-since="2022-06">--</strong> since June 2022.</p>
-        <article class="timeline-item" data-employer="ashley">
+        <article class="timeline-item" data-employer="ashley" data-initial="A">
           <span class="date-pill">Dec 2024 – Present</span>
           <h3>Data Engineer &middot; Ashley Global Capability Center</h3>
           <ul class="timeline-list">
@@ -309,7 +338,7 @@
             <li>Introduced AI-assisted workflows that contributed to 80% productivity improvement in delivery cycles.</li>
           </ul>
         </article>
-        <article class="timeline-item" data-employer="ashvad">
+        <article class="timeline-item" data-employer="ashvad" data-initial="V">
           <span class="date-pill">Jul 2023 – Dec 2024</span>
           <h3>Data Engineer &middot; Ashvad Tech Private Limited</h3>
           <ul class="timeline-list">
@@ -318,7 +347,7 @@
             <li>Supported migration to Entra-only authentication and strengthened data access governance.</li>
           </ul>
         </article>
-        <article class="timeline-item" data-employer="provana">
+        <article class="timeline-item" data-employer="provana" data-initial="P">
           <span class="date-pill">Jul 2022 – Jul 2023</span>
           <h3>Data Engineer &middot; Provana</h3>
           <ul class="timeline-list">
@@ -469,6 +498,16 @@
   <button id="toTop" class="to-top" aria-label="Scroll to top">Top</button>
 
   <footer class="site-footer shell">
+    <svg class="footer-monogram" viewBox="0 0 48 48" role="img" aria-label="NR monogram">
+      <defs>
+        <linearGradient id="nrGrad" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" style="stop-color: var(--accent)"/>
+          <stop offset="100%" style="stop-color: var(--accent-2)"/>
+        </linearGradient>
+      </defs>
+      <circle cx="24" cy="24" r="22" fill="none" stroke="url(#nrGrad)" stroke-width="1.6" opacity="0.7"/>
+      <text x="24" y="30" text-anchor="middle" font-family="Source Serif 4, Georgia, serif" font-size="19" font-weight="600" fill="url(#nrGrad)">NR</text>
+    </svg>
     <div class="footer-social" aria-label="Connect">
       <a href="https://www.linkedin.com/in/nishanthrajkumar" target="_blank" rel="noreferrer" aria-label="LinkedIn">LinkedIn</a>
       <span aria-hidden="true">·</span>
