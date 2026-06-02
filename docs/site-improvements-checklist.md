@@ -119,3 +119,93 @@ A7, E7, E9, F3, F4, G1, G3, G4, G5
 ---
 
 _Note: This checklist lives in `docs/` and is not linked from the site._
+
+---
+
+## Round 2 — Engineering, SEO & Performance
+
+_Post-structural review (June 2026). The A–G items above addressed information architecture, copy, and visual design. This batch covers engineering quality, SEO correctness, performance, accessibility, maintainability, tooling, and analytics — areas not previously tracked._
+
+Legend (same as above):
+- Effort: **L** = trivial / minutes, **M** = moderate / hour-ish, **H** = larger / multi-step
+- Impact: **★** = nice-to-have, **★★** = meaningful, **★★★** = page-transforming
+
+---
+
+### H. SEO & metadata correctness
+
+- [ ] **H1.** Replace the SVG OG/Twitter image (`assets/og-image.svg`) with a **PNG or JPG at 1200×630 px**. LinkedIn, Twitter/X, Slack, WhatsApp, and most link-preview renderers do not support SVG for social cards — the current setup silently produces a blank or broken preview when the link is shared. _(Effort: M · Impact: ★★★)_
+- [ ] **H2.** Update `sitemap.xml` `<lastmod>` to match the actual last-modified date whenever content changes. Consider auto-stamping it via a small build script or GitHub Action on push. _(Effort: L · Impact: ★)_
+- [ ] **H3.** Add `<meta name="twitter:site">` and `<meta name="twitter:creator">` tags if a Twitter/X handle exists, to improve card attribution. _(Effort: L · Impact: ★)_
+- [ ] **H4.** Verify the `<link rel="canonical">` in `index.html` always resolves to the HTTPS non-www form (`https://nishanthrajkumar.me/`) and that the CNAME + GitHub Pages redirect enforces this. _(Effort: L · Impact: ★★)_
+- [ ] **H5.** Add `og:locale` (`en_IN` or `en_US`) and `og:site_name` to the Open Graph block for richer social previews. _(Effort: L · Impact: ★)_
+
+---
+
+### I. Performance
+
+- [ ] **I1.** Add `font-display: swap` to the Google Fonts URL (append `&display=swap` — already present) and verify it is actually being applied; also consider **self-hosting** the two font families (Space Grotesk + Source Serif 4) to eliminate the third-party DNS round-trip and remove the render-blocking risk entirely. _(Effort: M · Impact: ★★)_
+- [ ] **I2.** **Minify `styles.css` and `script.js`** for production. At ~2,840 lines of CSS and ~843 lines of JS, minification would cut transfer size by ~30–40%. A simple npm build step (`esbuild`, `lightningcss`, or `terser`) or a GitHub Action can automate this. _(Effort: M · Impact: ★★)_
+- [ ] **I3.** The GitHub Stars fetch (`api.github.com`) is unauthenticated and subject to a 60 req/hr/IP rate limit. When the limit is hit the badge silently disappears. Consider: (a) removing the feature if stars are low-signal, or (b) routing through a lightweight serverless proxy with a token to raise the limit. _(Effort: M · Impact: ★)_
+- [ ] **I4.** Add `loading="lazy"` to any future `<img>` tags and ensure the `favicon.svg` has a raster fallback (`favicon.ico` or `favicon-32.png`) for older browsers and OS-level bookmark icons. _(Effort: L · Impact: ★)_
+- [ ] **I5.** Run a **Lighthouse audit** (Performance, Accessibility, Best Practices, SEO) and target 90+ on all four categories. Document the baseline scores and track regressions. _(Effort: L · Impact: ★★)_
+
+---
+
+### J. Accessibility
+
+- [ ] **J1.** Audit **focus-visible** states across all interactive elements (nav links, filter chips, architecture stages, theme toggle, to-top button) in both light and dark mode. Ensure the focus ring is clearly visible and not clipped by `overflow: hidden`. _(Effort: M · Impact: ★★)_
+- [ ] **J2.** Verify **color contrast ratios** (WCAG AA minimum 4.5:1 for normal text, 3:1 for large text) on: the spotlight pill text, credential pills, `--ink-soft` body copy, and the architecture annotation labels in dark mode. _(Effort: M · Impact: ★★)_
+- [ ] **J3.** The architecture SVG stages use `role="button"` and `tabindex="0"` — confirm that the `aria-label` on each stage is descriptive enough for screen-reader users who cannot see the diagram, and that the `aria-live="polite"` detail panel announces updates correctly. _(Effort: L · Impact: ★★)_
+- [ ] **J4.** The mobile menu (`#navLinks`) should trap focus when open and close on `Escape` key. Currently only `aria-expanded` is toggled; keyboard-only users may tab past the menu without being able to close it. _(Effort: M · Impact: ★★)_
+- [ ] **J5.** Add `<html lang="en">` — already present ✓ — but verify the `404.html` page also has it (it does). Confirm no `aria-hidden="true"` is accidentally applied to focusable elements. _(Effort: L · Impact: ★)_
+
+---
+
+### K. Code maintainability
+
+- [ ] **K1.** `script.js` is a single 843-line file with ~12 IIFEs labeled "Round 2 … Round 7" — accumulated incrementally. Add a **table of contents comment block** at the top listing each IIFE and its line range, or split into ES modules (`nav.js`, `tour.js`, `arch.js`, `download.js`, etc.) bundled at build time. _(Effort: M · Impact: ★)_
+- [ ] **K2.** The `animateCounter` function (lines 132–151 in `script.js`) is defined at the top level but **never called** — the actual counter animation runs inside a separate IIFE. Remove the dead function to reduce confusion. _(Effort: L · Impact: ★)_
+- [ ] **K3.** Inline styles in `404.html` (`style="min-height:80vh;display:grid;..."`) should be moved to `styles.css` under a `.error-page` class for consistency and easier theming. _(Effort: L · Impact: ★)_
+- [ ] **K4.** The `trackClickEvent` function is intentionally a no-op (CountAPI was discontinued). Either **wire up a privacy-friendly analytics provider** (Plausible, GoatCounter, or Umami — all self-hostable and GDPR-friendly) or **remove the dead scaffolding** (`data-track` attributes, `trackedLinks` query, and the empty function) to keep the codebase honest. _(Effort: M · Impact: ★★)_
+- [ ] **K5.** The `stopTour` function in the Impact Tour IIFE has a `resetMessage` parameter that is always called with `false` in the auto-stop path — the "Click Impact Tour…" default message is never restored after a tour completes. Decide if this is intentional and document it, or fix the call site. _(Effort: L · Impact: ★)_
+
+---
+
+### L. Tooling & CI
+
+- [ ] **L1.** Add a **GitHub Actions workflow** that runs on every push to `main`: (a) HTML validation (`html-validate` or W3C validator API), (b) broken-link check (`lychee` or `htmlproofer`), (c) Lighthouse CI score gate. This catches regressions before they reach production. _(Effort: H · Impact: ★★★)_
+- [ ] **L2.** Add an **npm `package.json`** (even a minimal one) to manage dev tooling: a CSS/JS minifier, a local dev server (`serve` or `browser-sync`), and a lint script. Currently there is no build toolchain at all, making automation harder to add later. _(Effort: M · Impact: ★★)_
+- [ ] **L3.** The `sitemap.xml` `lastmod` and the footer `<time>` element are both **manually maintained** and already slightly inconsistent (sitemap says 2026-05-23, footer says "May 2026"). A one-line build script that stamps both from `git log --format=%ci -1` would keep them in sync automatically. _(Effort: M · Impact: ★)_
+- [ ] **L4.** Add a **Content Security Policy** (CSP) header (via `_headers` file for GitHub Pages / Cloudflare, or a `<meta http-equiv="Content-Security-Policy">` tag) to restrict script/style sources to `self` + Google Fonts + `api.github.com`. This hardens the site against XSS without breaking any current functionality. _(Effort: M · Impact: ★★)_
+
+---
+
+### M. Content & README hygiene
+
+- [ ] **M1.** `README.md` "Currently Building" section still lists "GCP data pipelines with BigQuery, Cloud Functions, Dataflow, and Databricks" and "Cross-cloud data integration" — these are accurate but generic. Sync the README's **Now And Next** and **Currently Building** sections with the site's `#now` strip (CI/CD on PR merge for BigQuery SDLC; Microsoft Fabric Real-Time Intelligence) so both surfaces stay consistent. _(Effort: L · Impact: ★)_
+- [ ] **M2.** `README.md` uses `github-profile-summary-cards.vercel.app` for a profile summary card image. Verify this third-party service is still live and the card renders correctly; if not, replace with a static badge or remove. _(Effort: L · Impact: ★)_
+- [ ] **M3.** The `temp/` folder exists locally (gitignored via `temp/*`) but the folder itself is tracked. Add `temp/` (with trailing slash) to `.gitignore` so the empty directory is not committed, or add a `.gitkeep` with a comment explaining its purpose. _(Effort: L · Impact: ★)_
+
+---
+
+### Suggested batches (Round 2)
+
+#### Batch R2-1 — High-impact quick wins
+H1 (SVG OG image → PNG), I5 (Lighthouse baseline), K4 (analytics decision), J4 (mobile menu keyboard trap)
+
+#### Batch R2-2 — SEO & metadata
+H2, H3, H4, H5, M1, M2
+
+#### Batch R2-3 — Performance & build
+I1, I2, I3, L2, L3
+
+#### Batch R2-4 — Accessibility audit
+J1, J2, J3, J5
+
+#### Batch R2-5 — Code hygiene & CI
+K1, K2, K3, K5, L1, L4, M3
+
+---
+
+_Round 2 items added June 2026 after post-structural engineering review._
