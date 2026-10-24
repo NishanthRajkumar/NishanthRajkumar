@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nishanth Rajkumar | Data Engineer · Cloud Data Platforms</title>
-  <meta name="description" content="Nishanth Rajkumar (Nish) — Data Engineer building enterprise cloud data platforms across Azure and GCP with Databricks-native engineering and measurable delivery outcomes.">
+  <title>Nishanth Rajkumar | Data Engineer · Databricks Lakehouse · Data Platforms &amp; CI/CD</title>
+  <meta name="description" content="Nishanth Rajkumar (Nish) — Data Engineer building production Databricks Lakehouse platforms with Unity Catalog automation, Infrastructure-as-Code CI/CD, and applied AI across Azure and GCP.">
   <meta name="author" content="Nishanth Rajkumar">
   <link rel="canonical" href="https://nishanthrajkumar.me/">
   <meta name="theme-color" content="#0f766e" media="(prefers-color-scheme: light)">
@@ -12,7 +12,7 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="apple-touch-icon" href="favicon.svg">
   <meta property="og:title" content="Nishanth Rajkumar | Data Engineer">
-  <meta property="og:description" content="Enterprise data platforms, cross-cloud integration, and measurable delivery impact across Azure and GCP.">
+  <meta property="og:description" content="Databricks Lakehouse, Unity Catalog automation, and Infrastructure-as-Code CI/CD for production data platforms across Azure and GCP.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://nishanthrajkumar.me/">
   <meta property="og:image" content="https://nishanthrajkumar.me/assets/og-image.svg">
@@ -20,7 +20,7 @@
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Nishanth Rajkumar | Data Engineer">
-  <meta name="twitter:description" content="Cloud Data Platforms, Enterprise Integration, and Reliable Delivery at 15TB+ scale.">
+  <meta name="twitter:description" content="Databricks Lakehouse · Unity Catalog · CI/CD · Applied AI — production data platforms at 15TB+ scale.">
   <meta name="twitter:image" content="https://nishanthrajkumar.me/assets/og-image.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,11 +52,14 @@
       "https://www.linkedin.com/in/nishanthrajkumar",
       "https://github.com/NishanthRajkumar"
     ],
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "Karunya Institute of Technology and Sciences" },
     "knowsAbout": [
+      "Databricks", "Unity Catalog", "Delta Lake", "Databricks Asset Bundles", "Databricks Auto Loader",
+      "Apache Spark", "PySpark", "Azure DevOps", "Infrastructure as Code", "Azure Service Bus",
       "Azure Data Factory", "Azure Synapse", "Microsoft Fabric",
-      "Google BigQuery", "Google Dataflow", "Databricks", "Apache Spark",
-      "ETL", "ELT", "Change Data Capture", "Data Engineering",
-      "Python", "C#", ".NET", "SQL", "PySpark", "KQL"
+      "Google BigQuery", "Google Cloud Run", "Google Cloud Workflows", "Google Dataflow",
+      "Microsoft Presidio", "PII Masking", "ETL", "ELT", "Change Data Capture", "Data Governance",
+      "Python", "C#", ".NET", "SQL", "KQL", "pytest"
     ]
   }
   </script>
@@ -91,17 +94,18 @@
   <header class="site-header" id="top">
     <section class="hero shell" aria-labelledby="heroTitle">
       <div class="hero-copy reveal">
-        <a class="spotlight-pill" href="#initiative" aria-label="Jump to signature initiative: AI-integrated BigQuery SDLC">
+        <a class="spotlight-pill" href="#initiative" aria-label="Jump to signature initiative: Customer Service Hub on Databricks">
           <span class="spotlight-badge">Signature Initiative</span>
-          <span class="spotlight-text">AI-integrated BigQuery SDLC — now the reference pattern across teams</span>
+          <span class="spotlight-text">Customer Service Hub — a production Databricks Lakehouse, deployed end-to-end as code</span>
           <span class="spotlight-arrow" aria-hidden="true">→</span>
           <span class="spotlight-shimmer" aria-hidden="true"></span>
         </a>
         <p class="kicker kicker--hero">Cloud Data Engineering</p>
         <h1 id="heroTitle">Designing data systems that stay reliable at enterprise scale.</h1>
         <p class="lede">
-          I build integration-heavy data platforms across Azure and GCP, with Databricks-native engineering patterns,
-          observability by design, and AI-assisted delivery that compounds team velocity.
+          I build production Databricks Lakehouse platforms &mdash; Unity Catalog automation, metadata-driven ingestion,
+          Infrastructure-as-Code CI/CD, and privacy-preserving AI &mdash; and turn manual platform work into reusable,
+          tested engineering frameworks across Azure and GCP.
         </p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#initiative">See the Initiative<span class="btn-arrow" aria-hidden="true">→</span></a>
@@ -115,14 +119,14 @@
       <div class="hero-art reveal" aria-hidden="true">
         <div class="stack-constellation">
           <span class="stack-core">Cloud Data<br>Engineering</span>
-          <span class="stack-chip chip-tl">BigQuery</span>
-          <span class="stack-chip chip-tr">Databricks</span>
+          <span class="stack-chip chip-tl">Databricks</span>
+          <span class="stack-chip chip-tr">Unity Catalog</span>
           <span class="stack-chip chip-ml">Azure</span>
           <span class="stack-chip chip-mr">GCP</span>
-          <span class="stack-chip chip-bl">Python</span>
-          <span class="stack-chip chip-br">.NET</span>
-          <span class="stack-chip chip-t">CDC</span>
-          <span class="stack-chip chip-b">Fabric</span>
+          <span class="stack-chip chip-bl">PySpark</span>
+          <span class="stack-chip chip-br">BigQuery</span>
+          <span class="stack-chip chip-t">Delta Lake</span>
+          <span class="stack-chip chip-b">CI/CD</span>
         </div>
       </div>
     </section>
@@ -133,10 +137,10 @@
         <article class="proof-item proof-anchor" data-tour-step="3"><p class="proof-value" data-count="15" data-suffix="TB+">15TB+</p><p class="proof-label">Data Scale</p></article>
       </div>
       <div class="proof-grid proof-secondary-row">
-        <article class="proof-item" data-tour-step="0"><p class="proof-value" data-count="80" data-suffix="%">80%</p><p class="proof-label">Productivity Gain</p></article>
-        <article class="proof-item" data-tour-step="1"><p class="proof-value" data-count="11">11</p><p class="proof-label">POCs Beyond Target</p></article>
-        <article class="proof-item"><p class="proof-value" data-count="14">14</p><p class="proof-label">Innovation Initiatives</p></article>
-        <article class="proof-item" data-tour-step="2"><p class="proof-value" data-count="22">22</p><p class="proof-label">Operational Improvements</p></article>
+        <article class="proof-item" data-tour-step="0"><p class="proof-value" data-count="20" data-suffix="×">20×</p><p class="proof-label">Faster Runtime (4h &rarr; 10m)</p></article>
+        <article class="proof-item" data-tour-step="1"><p class="proof-value" data-count="140">140</p><p class="proof-label">Automated Tests in CI</p></article>
+        <article class="proof-item" data-tour-step="2"><p class="proof-value" data-count="78" data-suffix="%">78%</p><p class="proof-label">Leaner Pipeline Code</p></article>
+        <article class="proof-item"><p class="proof-value" data-count="6">6</p><p class="proof-label">Production Workflows</p></article>
       </div>
       <p class="metric-story" id="metricsStory" aria-live="polite">Click <span aria-hidden="true">▶</span> Impact Tour to run a 4-step walkthrough of these outcomes.</p>
     </section>
@@ -146,76 +150,91 @@
     <section id="initiative" class="section shell reveal" aria-labelledby="initiativeTitle">
       <div class="section-head">
         <p class="kicker">Signature Initiative</p>
-        <h2 id="initiativeTitle">AI-integrated BigQuery SDLC — a repo-first operating model</h2>
+        <h2 id="initiativeTitle">Customer Service Hub &mdash; a production Databricks Lakehouse, deployed as code</h2>
       </div>
       <article class="card initiative-card">
         <div class="initiative-outcome-band" role="note" aria-label="Headline outcome">
           <span class="outcome-band-label">Outcome</span>
-          <span class="outcome-band-metric">~5 days &rarr; 1&ndash;2 days</span>
-          <span class="outcome-band-tag">Adopted as the org's reference pattern</span>
+          <span class="outcome-band-metric">6 production workflows &middot; 3 workspaces &middot; 140 tests</span>
+          <span class="outcome-band-tag">Notebooks, jobs, permissions &amp; schema shipped atomically through CI/CD</span>
         </div>
         <p class="initiative-lede">
-          Self-driven initiative to make AI pair-programming safely usable on a warehouse platform that had
-          <em>no native repo support and zero margin for unreviewed change</em>. Now the reference pattern other
-          Ashley teams are pointed to for their own data platforms.
+          Built and operate the Lakehouse that consolidates customer-support and engagement data &mdash; voice, chat,
+          order events, cases and customer master data &mdash; into Unity Catalog for operational reporting, AI-driven
+          interaction classification and PII-safe analytics. <em>Every schema change, job and permission is version-controlled
+          and promoted Dev &rarr; Stage &rarr; Prod by pipeline, never by hand.</em>
         </p>
 
         <div class="initiative-grid">
           <section class="initiative-block initiative-block--muted">
             <h3>Problem</h3>
             <ul>
-              <li>Ashley pushed AI-first SDLC across engineering, but BigQuery (and warehouse platforms generally) had no native or third-party way to live in a Git repo — the very context AI tools need to be useful.</li>
-              <li>Leadership had legitimate concerns about AI touching databases: unintended schema or data changes are not as reversible as code, and human accountability had to be preserved.</li>
-              <li>Teams working on APIs, frontends and backends were accelerating with AI. Data engineering was being left behind.</li>
+              <li>Support and engagement data was spread across voice, chat, order-event and case systems, with no single governed place to analyse it.</li>
+              <li>Notebook and job deployment depended on a separate Git-sync process, so code and job definitions could drift apart between environments.</li>
+              <li>Unity Catalog schema changes were applied manually &mdash; a risk in Production and a bottleneck with several developers working in parallel.</li>
+              <li>Customer transcripts contain PII and had to be safe to analyse before anyone could classify or report on them.</li>
             </ul>
           </section>
 
           <section class="initiative-block initiative-block--muted">
             <h3>Approach</h3>
             <ul>
-              <li><strong>Exported BigQuery into a repo:</strong> wrote an <code>INFORMATION_SCHEMA</code> query that emits every table, view, routine and function as SQL files into GCS, then materialised them into a proper repository structure with parallel JSON metadata for AI context.</li>
-              <li><strong>Guardrails for the AI:</strong> authored an RFC-2119 style standards document (naming, audit columns, formatting, partitioning, JOIN discipline, documentation) that Augment Code is required to follow on every change.</li>
-              <li><strong>Guardrails for humans:</strong> a development workflow that forbids direct DDL on any BigQuery project; all structural changes flow through feature branch → PR review → generated change script with explicit data-migration steps → deployment by named BigQuery owners.</li>
-              <li><strong>Environment promotion:</strong> <code>main-dev</code> mirrors the dev GCP project; release branches into <code>main</code> mirror prod. Project IDs and dataset names are parameterised so the same artefacts work cleanly across environments.</li>
+              <li><strong>CI/CD as code:</strong> a 4-stage Azure DevOps pipeline (Validate &rarr; Dev &rarr; Stage &rarr; Prod) deploying Databricks Asset Bundles with per-environment service principals, approval gates and a single validated artefact reused everywhere.</li>
+              <li><strong>Bundle generator:</strong> Python tooling that assembles <code>databricks.yml</code> from per-job YAML, enforces naming rules, catches duplicates and missing notebooks at build time, and applies job permissions consistently.</li>
+              <li><strong>Schema reconciliation engine:</strong> diffs version-controlled DDL against the live catalog, auto-applies safe changes (new columns, type widening) and routes destructive or ambiguous drift to a conditional review gate that blocks only in Production.</li>
+              <li><strong>Ingestion &amp; AI:</strong> metadata-driven, watermark-based ingestion; Azure Service Bus &rarr; Auto Loader every 15 minutes; GPU PII masking (XLM-RoBERTa + Presidio) followed by <code>AI_CLASSIFY</code> interaction categorisation.</li>
             </ul>
           </section>
 
           <section class="initiative-block initiative-block--feature">
             <h3>Outcome</h3>
             <ul>
-              <li><strong>~5 days → 1–2 days</strong> for representative use cases inside my team after adoption.</li>
-              <li><strong>Endorsed by leadership</strong> after the POC and rolled out at the team level; subsequently held up as the reference pattern other Ashley teams follow for their databases.</li>
-              <li><strong>Zero loss of accountability:</strong> every change is still gated by human PR review and executed by a small set of BigQuery owners, addressing the original leadership concern by design rather than by policy.</li>
-              <li><strong>Currently evolving</strong> toward CI/CD on PR merge to remove manual deployment risk while preserving the PR-level human gate.</li>
+              <li><strong>6 production Databricks Workflows</strong> live across 3 workspaces, running every 15 minutes to daily.</li>
+              <li><strong>Atomic deployments:</strong> notebooks, jobs and permissions ship together; the separate Git-sync dependency is gone.</li>
+              <li><strong>1,042 &rarr; 228 lines</strong> of pipeline YAML through reusable templates; <strong>140 pytest tests</strong> run on every build.</li>
+              <li><strong>Governance enforced in CI:</strong> six DDL rules; 40 tables, 20 routines and 2 views remediated in one pass.</li>
+              <li><strong>Safe schema evolution</strong> without blocking parallel work in Dev/Stage, and human review where it matters in Prod.</li>
             </ul>
           </section>
         </div>
 
-        <p class="stack">BigQuery · GCS · Augment Code · Git · GitHub PRs · INFORMATION_SCHEMA · PowerShell · JSON schemas</p>
+        <p class="stack">Databricks · Unity Catalog · Delta Lake · Asset Bundles · Auto Loader · Workflows · PySpark · Azure DevOps · Azure Service Bus · pytest · Presidio · XLM-RoBERTa · AI_CLASSIFY</p>
+      </article>
+
+      <article class="card initiative-card initiative-card--secondary">
+        <p class="kicker">Also at Ashley</p>
+        <h3>AI-integrated BigQuery SDLC &mdash; a repo-first operating model</h3>
+        <p>
+          Exported BigQuery into a Git repo via <code>INFORMATION_SCHEMA</code>, wrote RFC-2119 standards for AI coding agents,
+          and designed a human-gated workflow (feature branch &rarr; PR review &rarr; generated change script &rarr; owner deployment)
+          so AI pair-programming could be used safely on the warehouse.
+          <strong>Representative delivery went from ~5 days to 1&ndash;2 days</strong>, and other Ashley teams now use it as the reference pattern.
+        </p>
+        <p class="stack">BigQuery · GCS · Augment Code · Git · GitHub PRs · INFORMATION_SCHEMA · PowerShell</p>
       </article>
     </section>
 
     <section id="architecture" class="section shell reveal" aria-labelledby="architectureTitle">
       <div class="section-head">
         <p class="kicker">Reference Architecture</p>
-        <h2 id="architectureTitle">Near real-time CDC pipeline at enterprise scale</h2>
+        <h2 id="architectureTitle">Customer Service Hub data flow &mdash; ingest, protect, classify, serve</h2>
       </div>
       <article class="card architecture-card">
         <div class="architecture-story">
           <div>
-            <p><strong>Problem.</strong> Operational systems held the truth, but analytics consumers needed fresh, query-ready data at 15&nbsp;TB+ scale without straining the source databases or losing change events on failure.</p>
-            <p><strong>Approach.</strong> Capture row-level change events at the source, fan them through a managed event bus, transform with a streaming engine, and land curated tables in the warehouse with full lineage, retries, and KQL-based alerting baked into delivery.</p>
-            <p><strong>Outcome.</strong> A repeatable pattern that moved change events from source to dashboard in near real time, kept producer load steady, and exposed every failure through actionable alerts instead of silent drift.</p>
+            <p><strong>Problem.</strong> Voice, chat, order-event, case and customer master data lived in separate systems, and interaction transcripts carried PII that made them unsafe to analyse as-is.</p>
+            <p><strong>Approach.</strong> Land order events from Azure Service Bus as parquet and pick them up with Auto Loader; drive every other source through a config-table ingestion framework with watermarks; layer data raw &rarr; staging &rarr; processed in Unity Catalog; mask PII on GPU before any LLM classification touches a transcript.</p>
+            <p><strong>Outcome.</strong> A governed Lakehouse serving operational reporting, engagement insight and AI-classified interactions &mdash; with new sources onboarded by configuration rather than new code, and the whole stack promoted Dev &rarr; Stage &rarr; Prod by pipeline.</p>
           </div>
           <ul class="architecture-callouts" aria-label="Pipeline guarantees">
-            <li><span class="callout-label">Freshness</span><span class="callout-value">Seconds to single-digit minutes</span></li>
-            <li><span class="callout-label">Scale</span><span class="callout-value">15&nbsp;TB+ active workloads</span></li>
-            <li><span class="callout-label">Reliability</span><span class="callout-value">At-least-once, idempotent merge</span></li>
-            <li><span class="callout-label">Observability</span><span class="callout-value">Lineage · KQL alerts · runbooks</span></li>
+            <li><span class="callout-label">Freshness</span><span class="callout-value">Order events every 15 minutes</span></li>
+            <li><span class="callout-label">Reliability</span><span class="callout-value">Watermark loads · idempotent reprocessing</span></li>
+            <li><span class="callout-label">Privacy</span><span class="callout-value">PII masked before classification</span></li>
+            <li><span class="callout-label">Governance</span><span class="callout-value">Unity Catalog · DDL rules enforced in CI</span></li>
           </ul>
         </div>
-        <div class="architecture-wrap" aria-label="Annotated CDC pipeline diagram">
-          <svg viewBox="0 0 920 320" role="img" aria-label="Source database to warehouse pipeline with CDC capture, event hub, streaming transform, curated zone, and serving with monitoring">
+        <div class="architecture-wrap" aria-label="Annotated Customer Service Hub pipeline diagram">
+          <svg viewBox="0 0 920 320" role="img" aria-label="Source systems to Unity Catalog pipeline with Service Bus capture, Auto Loader ingestion, metadata-driven transforms, PII masking and AI classification, and governed serving">
             <defs>
               <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
                 <path d="M0,0 L10,5 L0,10 z" class="arrow-head"/>
@@ -230,32 +249,32 @@
                 <path d="M1,2.5 V11 a6,2 0 0 0 12,0 V2.5" fill="none"/>
                 <path d="M1,6.5 a6,2 0 0 0 12,0" fill="none"/>
               </g>
-              <text x="90" y="142" text-anchor="middle" class="node-title">Source DB</text>
-              <text x="90" y="162" text-anchor="middle" class="node-sub">SQL / NoSQL</text>
-              <text x="90" y="200" text-anchor="middle" class="stage-label">Operational</text>
+              <text x="90" y="142" text-anchor="middle" class="node-title">Source Systems</text>
+              <text x="90" y="162" text-anchor="middle" class="node-sub">Voice · Chat · Orders</text>
+              <text x="90" y="200" text-anchor="middle" class="stage-label">Sources</text>
             </g>
 
             <!-- Stage 2: CDC Capture -->
-            <g class="stage arch-stage" data-stage="capture" tabindex="0" role="button" aria-label="CDC capture stage details">
+            <g class="stage arch-stage" data-stage="capture" tabindex="0" role="button" aria-label="Event capture stage details">
               <rect x="200" y="110" width="150" height="80" rx="12"/>
               <g class="stage-icon" transform="translate(210,120)" aria-hidden="true">
                 <path d="M2,2 H12 M2,12 H12 M4,5 H10 M4,8 H10" fill="none"/>
                 <circle cx="12" cy="5" r="1.4" fill="currentColor" stroke="none"/>
               </g>
-              <text x="275" y="142" text-anchor="middle" class="node-title">CDC Capture</text>
-              <text x="275" y="162" text-anchor="middle" class="node-sub">Debezium / Native</text>
+              <text x="275" y="142" text-anchor="middle" class="node-title">Azure Service Bus</text>
+              <text x="275" y="162" text-anchor="middle" class="node-sub">Order events → parquet</text>
               <text x="275" y="200" text-anchor="middle" class="stage-label">Capture</text>
             </g>
 
             <!-- Stage 3: Event Bus -->
-            <g class="stage arch-stage" data-stage="transport" tabindex="0" role="button" aria-label="Transport stage details">
+            <g class="stage arch-stage" data-stage="transport" tabindex="0" role="button" aria-label="Ingestion stage details">
               <rect x="390" y="110" width="160" height="80" rx="12"/>
               <g class="stage-icon" transform="translate(400,120)" aria-hidden="true">
                 <path d="M8,1 L3,8 H7 L6,13 L11,6 H7 L9,1 Z" fill="currentColor" stroke="none"/>
               </g>
-              <text x="470" y="142" text-anchor="middle" class="node-title">Event Hub / Pub-Sub</text>
-              <text x="470" y="162" text-anchor="middle" class="node-sub">Partitioned, replayable</text>
-              <text x="470" y="200" text-anchor="middle" class="stage-label">Transport</text>
+              <text x="470" y="142" text-anchor="middle" class="node-title">Auto Loader</text>
+              <text x="470" y="162" text-anchor="middle" class="node-sub">Raw zone · watermarks</text>
+              <text x="470" y="200" text-anchor="middle" class="stage-label">Ingest</text>
             </g>
 
             <!-- Stage 4: Transform -->
@@ -265,12 +284,12 @@
                 <circle cx="7" cy="7" r="2" fill="none"/>
                 <path d="M7,1 V3 M7,11 V13 M1,7 H3 M11,7 H13 M2.6,2.6 L4,4 M10,10 L11.4,11.4 M2.6,11.4 L4,10 M10,4 L11.4,2.6" fill="none"/>
               </g>
-              <text x="670" y="90" text-anchor="middle" class="node-title">Dataflow / ADF</text>
-              <text x="670" y="110" text-anchor="middle" class="node-sub">Stream + micro-batch</text>
+              <text x="670" y="90" text-anchor="middle" class="node-title">Stage → Processed</text>
+              <text x="670" y="110" text-anchor="middle" class="node-sub">PySpark · SQL procedures</text>
 
               <rect x="590" y="170" width="160" height="70" rx="12"/>
-              <text x="670" y="200" text-anchor="middle" class="node-title">Databricks</text>
-              <text x="670" y="220" text-anchor="middle" class="node-sub">Curate · Enrich · Dedup</text>
+              <text x="670" y="200" text-anchor="middle" class="node-title">PII · Classify</text>
+              <text x="670" y="220" text-anchor="middle" class="node-sub">Presidio · AI_CLASSIFY</text>
               <text x="670" y="270" text-anchor="middle" class="stage-label">Transform</text>
             </g>
 
@@ -280,12 +299,12 @@
               <g class="stage-icon" transform="translate(790,70)" aria-hidden="true">
                 <path d="M2,12 V9 M5,12 V6 M8,12 V8 M11,12 V3" fill="none" stroke-width="1.8"/>
               </g>
-              <text x="840" y="90" text-anchor="middle" class="node-title">BigQuery</text>
-              <text x="840" y="110" text-anchor="middle" class="node-sub">Synapse · Fabric</text>
+              <text x="840" y="90" text-anchor="middle" class="node-title">Unity Catalog</text>
+              <text x="840" y="110" text-anchor="middle" class="node-sub">Delta · 5 domains</text>
 
               <rect x="780" y="170" width="120" height="70" rx="12"/>
-              <text x="840" y="200" text-anchor="middle" class="node-title">Power BI</text>
-              <text x="840" y="220" text-anchor="middle" class="node-sub">KQL Alerts</text>
+              <text x="840" y="200" text-anchor="middle" class="node-title">Reporting</text>
+              <text x="840" y="220" text-anchor="middle" class="node-sub">Job failure alerts</text>
               <text x="840" y="270" text-anchor="middle" class="stage-label">Serve</text>
             </g>
 
@@ -305,19 +324,19 @@
             <circle class="flow-ping flow-ping--d" cx="750" cy="205" r="3" aria-hidden="true"/>
 
             <!-- Annotations -->
-            <text x="180" y="100" text-anchor="middle" class="annotation">low-impact reads</text>
-            <text x="370" y="100" text-anchor="middle" class="annotation">change events</text>
-            <text x="568" y="50" text-anchor="middle" class="annotation">near real-time</text>
-            <text x="568" y="270" text-anchor="middle" class="annotation">heavy enrichment</text>
-            <text x="765" y="50" text-anchor="middle" class="annotation">query-ready</text>
+            <text x="180" y="100" text-anchor="middle" class="annotation">order events</text>
+            <text x="370" y="100" text-anchor="middle" class="annotation">every 15 min</text>
+            <text x="568" y="50" text-anchor="middle" class="annotation">metadata-driven</text>
+            <text x="568" y="270" text-anchor="middle" class="annotation">GPU · LLM</text>
+            <text x="765" y="50" text-anchor="middle" class="annotation">governed</text>
             <text x="765" y="270" text-anchor="middle" class="annotation">consumer surface</text>
           </svg>
         </div>
         <aside class="arch-detail" id="archDetail" aria-live="polite">
           <p class="arch-detail-hint">Hover, focus or tap any stage above to see what runs there in production.</p>
         </aside>
-        <p class="stack">CDC · Event Hub / Pub-Sub · Dataflow · ADF · Databricks · BigQuery · Synapse · Power BI · KQL</p>
-        <p class="architecture-note">Pattern distilled from production delivery at Ashley and prior enterprise programs. Tooling adapts to the cloud in play; the contract (capture → transform → serve → observe) stays the same.</p>
+        <p class="stack">Azure Service Bus · Auto Loader · Delta Lake · PySpark · Unity Catalog · Presidio · XLM-RoBERTa · AI_CLASSIFY · Databricks Workflows</p>
+        <p class="architecture-note">Simplified view of the Customer Service Hub platform at Ashley. Earlier programs used the same capture &rarr; transform &rarr; serve &rarr; observe contract on ADF, Synapse, Dataflow and BigQuery.</p>
       </article>
     </section>
 
@@ -332,19 +351,21 @@
           <span class="date-pill">Dec 2024 – Present</span>
           <h3>Data Engineer &middot; Ashley Global Capability Center</h3>
           <ul class="timeline-list">
-            <li><strong>Designed and led adoption of the org's first AI-integrated BigQuery SDLC pattern</strong> &mdash; repo-first operating model with AI guardrails and human-gated deployment. Cut representative delivery from ~5 days to 1–2 days and became the reference other Ashley teams follow. <a href="#initiative">See the initiative →</a></li>
-            <li>Spearheaded GCP data platforms with BigQuery, Dataflow, and Cloud Functions for 15TB+ workloads.</li>
-            <li>Implemented CDC and integration frameworks across heterogeneous systems with .NET Function Apps and APIs.</li>
-            <li>Introduced AI-assisted workflows that contributed to 80% productivity improvement in delivery cycles.</li>
+            <li><strong>Built the Customer Service Hub Databricks Lakehouse end-to-end</strong> &mdash; a 4-stage Azure DevOps CI/CD framework on Databricks Asset Bundles deploying notebooks, jobs, permissions and config atomically across Dev, Stage and Prod. <a href="#initiative">See the initiative →</a></li>
+            <li>Engineered a Python/PySpark Unity Catalog reconciliation framework that auto-applies safe schema evolution and routes destructive drift through conditional review; backed by 140 pytest tests and six CI-enforced DDL rules.</li>
+            <li>Built and operate 6 production Databricks Workflows with metadata-driven, watermark-based ingestion, including a 15-minute Azure Service Bus &rarr; Auto Loader order-event flow.</li>
+            <li>Delivered a GPU-accelerated PII-masking and interaction-classification pipeline using XLM-RoBERTa Large, Microsoft Presidio and Databricks <code>AI_CLASSIFY</code>.</li>
+            <li>Re-engineered an encrypted-file processing workload on Google Cloud Workflows and Cloud Run Jobs with parallel processing &mdash; runtime cut from ~4 hours to ~10 minutes (&asymp;20&times;).</li>
+            <li>Designed the repo-first, AI-integrated BigQuery SDLC now used as the reference pattern by other Ashley teams (~5 days &rarr; 1&ndash;2 days per change).</li>
           </ul>
         </article>
         <article class="timeline-item" data-employer="ashvad" data-initial="V">
           <span class="date-pill">Jul 2023 – Dec 2024</span>
-          <h3>Data Engineer &middot; Ashvad Tech Private Limited</h3>
+          <h3>Data Engineer &middot; Ashvad Tech Private Limited <span class="timeline-aka">(formerly Ashtbit Technologies)</span></h3>
           <ul class="timeline-list">
             <li>Built scalable ETL pipelines using Azure Data Factory and Synapse for enterprise reporting and analytics.</li>
             <li>Delivered .NET Web API integration services and Hangfire-based orchestration for automated workflows.</li>
-            <li>Supported migration to Entra-only authentication and strengthened data access governance.</li>
+            <li>Enhanced Power BI reporting and implemented the migration to Entra-only authentication to strengthen access governance.</li>
           </ul>
         </article>
         <article class="timeline-item" data-employer="provana" data-initial="P">
@@ -424,11 +445,11 @@
       <div class="now-strip">
         <article class="now-card">
           <p class="now-label">Building</p>
-          <p class="now-body">CI/CD on PR merge for the BigQuery SDLC &mdash; closing the last manual deployment gap while keeping the human PR gate.</p>
+          <p class="now-body">Hardening the Unity Catalog reconciliation engine &mdash; richer drift classification and a reviewed change-script path for destructive schema changes.</p>
         </article>
         <article class="now-card">
           <p class="now-label">Building</p>
-          <p class="now-body">Generated change-script tooling that diffs the repo against a target BigQuery project and emits an auditable migration plan.</p>
+          <p class="now-body">A vendor-agnostic customer-service data model that treats human, automated and AI-assisted resolution as first-class &mdash; ready for new conversational-AI sources without re-architecture.</p>
         </article>
         <article class="now-card">
           <p class="now-label">Learning</p>
@@ -444,9 +465,9 @@
       </div>
       <article class="card week-one-card" aria-labelledby="weekOneTitle">
         <ul class="week-one-list">
-          <li><strong>Audit one critical pipeline</strong> for observability gaps &mdash; lineage, freshness SLOs, KQL alert coverage &mdash; and ship a one-page risk note.</li>
-          <li><strong>Stand up a CDC POC</strong> on a non-prod source &rarr; event hub &rarr; curated table, with replay and idempotent merge proven end-to-end.</li>
-          <li><strong>Document one repo-first standard</strong> for AI-assisted change (naming, audit columns, PR gate) so the next 10 changes follow the same shape.</li>
+          <li><strong>Run a schema-drift audit</strong> comparing your Unity Catalog (or warehouse) against what's in source control, and ship a one-page risk note on what would break a deploy.</li>
+          <li><strong>Put one Databricks job under Asset Bundles</strong> with a Dev &rarr; Prod pipeline, service-principal auth and an approval gate &mdash; a working template the rest can copy.</li>
+          <li><strong>Document one repo-first standard</strong> for AI-assisted change (naming, idempotent DDL, PR gate) so the next 10 changes follow the same shape.</li>
         </ul>
         <p class="week-one-foot">Concrete, low-blast-radius, designed to surface what to invest in next.</p>
       </article>
@@ -473,6 +494,8 @@
             <span class="cred-pill">Microsoft Azure Data Scientist Associate &middot; Recert Nov 2025</span>
             <span class="cred-pill">DeepLearning.AI TensorFlow Developer</span>
           </div>
+          <p class="cred-label">Education</p>
+          <p class="cred-line">Bachelor&rsquo;s in Computer Science &middot; Karunya Institute of Technology and Sciences &middot; 2014&ndash;2018</p>
         </div>
         <div class="cred-block">
           <p class="cred-label">Open to</p>
@@ -481,12 +504,12 @@
       </div>
 
       <div class="contact-panel">
-        <p>If your team is building data platforms, integrating cloud ecosystems, or modernizing delivery with reliable AI-assisted engineering, I am open to collaborating.</p>
+        <p>If your team is building Databricks Lakehouse platforms, automating data-platform delivery, or modernizing with reliable AI-assisted engineering, I am open to collaborating.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="docs/Nish_Resume_SL_20260430.pdf" download data-track="resume_pdf_click" data-fallback="docs/Nish_Resume_SL_20260430.docx">Resume PDF</a>
-          <a class="btn btn-secondary" href="docs/Nish_Resume_SL_20260430.docx" download data-track="resume_docx_click">Resume DOCX</a>
-          <a class="btn btn-secondary" href="docs/Nish_ProfSumm_SL_20260430.pdf" download data-track="prosummary_pdf_click" data-fallback="docs/Nish_ProfSumm_SL_20260430.docx">Summary PDF</a>
-          <a class="btn btn-secondary" href="docs/Nish_ProfSumm_SL_20260430.docx" download data-track="prosummary_docx_click">Summary DOCX</a>
+          <a class="btn btn-primary" href="docs/Nishanth_Rajkumar_Professional_Resume_20261024.pdf" download data-track="resume_pdf_click" data-fallback="docs/Nishanth_Rajkumar_Professional_Resume_20261024.docx">Resume PDF</a>
+          <a class="btn btn-secondary" href="docs/Nishanth_Rajkumar_Professional_Resume_20261024.docx" download data-track="resume_docx_click">Resume DOCX</a>
+          <a class="btn btn-secondary" href="docs/Nishanth_Rajkumar_Resume_20261024.pdf" download data-track="ats_resume_pdf_click" data-fallback="docs/Nishanth_Rajkumar_Resume_20261024.docx">ATS Resume PDF</a>
+          <a class="btn btn-secondary" href="docs/Nishanth_Rajkumar_Resume_20261024.docx" download data-track="ats_resume_docx_click">ATS Resume DOCX</a>
           <a class="btn btn-primary" href="mailto:nishrk97@outlook.com">Email</a>
           <a class="btn btn-secondary" href="https://www.linkedin.com/in/nishanthrajkumar" target="_blank" rel="noreferrer" data-track="linkedin_click">LinkedIn</a>
           <a class="btn btn-secondary" href="https://github.com/NishanthRajkumar" target="_blank" rel="noreferrer">GitHub</a>
@@ -514,7 +537,7 @@
       <a href="https://github.com/NishanthRajkumar" target="_blank" rel="noreferrer" aria-label="GitHub">GitHub</a>
       <span aria-hidden="true">·</span>
       <a href="mailto:nishrk97@outlook.com" aria-label="Email">Email</a>
-    </div>
+    </div>10-24">October
     <p>© <span id="footerYear">2026</span> Nishanth Rajkumar &middot; Built in plain HTML, CSS &amp; JS &middot; <a href="https://github.com/NishanthRajkumar/NishanthRajkumar" target="_blank" rel="noreferrer">View source</a></p>
     <p class="footer-meta">Last updated: <time id="lastUpdated" datetime="2026-05-23">May 2026</time></p>
   </footer>

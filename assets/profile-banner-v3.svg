@@ -49,13 +49,13 @@
   <text x="74" y="176" fill="#FFFFFF" font-family="Georgia, 'Times New Roman', serif" font-size="58" font-weight="700">Nishanth Rajkumar</text>
 
   <text x="74" y="218" fill="#ECF3FF" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">
-    <tspan x="74" dy="0">Data Engineer | Cloud Data Platforms</tspan>
-    <tspan x="74" dy="30">AI-Assisted Engineering</tspan>
+    <tspan x="74" dy="0">Data Engineer | Databricks Lakehouse</tspan>
+    <tspan x="74" dy="30">Data Platforms &amp; CI/CD</tspan>
   </text>
 
   <text x="74" y="280" fill="#CDDEEF" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="500">
-    <tspan x="74" dy="0">Databricks, GCP + Azure pipelines, CDC, and automation.</tspan>
-    <tspan x="74" dy="24">Reliable delivery for enterprise-scale platforms.</tspan>
+    <tspan x="74" dy="0">Unity Catalog automation, Infrastructure-as-Code, and applied AI.</tspan>
+    <tspan x="74" dy="24">Production data platforms across Azure and GCP.</tspan>
   </text>
 
   <g transform="translate(74 324)">
@@ -83,14 +83,14 @@
 
     <g transform="translate(24 122)">
       <rect x="0" y="0" width="96" height="52" rx="12" fill="#9BE8C8" fill-opacity="0.12" stroke="#9BE8C8" stroke-opacity="0.28"/>
-      <text x="12" y="24" fill="#F2FFF9" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="800">80%</text>
-      <text x="12" y="41" fill="#CBE8DE" font-family="Segoe UI, Arial, sans-serif" font-size="10.5" font-weight="600">Prod Gain</text>
+      <text x="12" y="24" fill="#F2FFF9" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="800">20×</text>
+      <text x="12" y="41" fill="#CBE8DE" font-family="Segoe UI, Arial, sans-serif" font-size="10.5" font-weight="600">Runtime Gain</text>
     </g>
 
     <g transform="translate(128 122)">
       <rect x="0" y="0" width="96" height="52" rx="12" fill="#FFCE83" fill-opacity="0.12" stroke="#FFCE83" stroke-opacity="0.28"/>
-      <text x="12" y="24" fill="#FFF8EA" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="800">22</text>
-      <text x="12" y="41" fill="#F0DDC0" font-family="Segoe UI, Arial, sans-serif" font-size="10.5" font-weight="600">Improvements</text>
+      <text x="12" y="24" fill="#FFF8EA" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="800">140</text>
+      <text x="12" y="41" fill="#F0DDC0" font-family="Segoe UI, Arial, sans-serif" font-size="10.5" font-weight="600">CI Tests</text>
     </g>
 
     <text x="32" y="206" fill="#BBD0E5" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600">Data Platforms | Automation | AI Delivery</text>

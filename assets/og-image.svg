@@ -22,16 +22,16 @@
     <text x="200" y="514" text-anchor="middle" font-size="18" fill="#455062">Data Scale</text>
 
     <rect x="340" y="450" width="240" height="80" rx="14" fill="#fffdf8" stroke="#e3ddcf"/>
-    <text x="460" y="488" text-anchor="middle" font-weight="700" fill="url(#ink)">80%</text>
-    <text x="460" y="514" text-anchor="middle" font-size="18" fill="#455062">Productivity Gain</text>
+    <text x="460" y="488" text-anchor="middle" font-weight="700" fill="url(#ink)">20×</text>
+    <text x="460" y="514" text-anchor="middle" font-size="18" fill="#455062">Runtime Gain</text>
 
     <rect x="600" y="450" width="240" height="80" rx="14" fill="#fffdf8" stroke="#e3ddcf"/>
-    <text x="720" y="488" text-anchor="middle" font-weight="700" fill="url(#ink)">Azure · GCP</text>
-    <text x="720" y="514" text-anchor="middle" font-size="18" fill="#455062">Cross-cloud Delivery</text>
+    <text x="720" y="488" text-anchor="middle" font-weight="700" fill="url(#ink)">140 Tests</text>
+    <text x="720" y="514" text-anchor="middle" font-size="18" fill="#455062">CI/CD as Code</text>
 
     <rect x="860" y="450" width="240" height="80" rx="14" fill="#fffdf8" stroke="#e3ddcf"/>
     <text x="980" y="488" text-anchor="middle" font-weight="700" fill="url(#ink)">Databricks</text>
-    <text x="980" y="514" text-anchor="middle" font-size="18" fill="#455062">Spark Engineering</text>
+    <text x="980" y="514" text-anchor="middle" font-size="18" fill="#455062">Lakehouse · Unity Catalog</text>
   </g>
   <text x="80" y="600" font-family="'Space Grotesk','Segoe UI',sans-serif" font-size="22" fill="#455062">nishanthrajkumar.me</text>
 </svg>

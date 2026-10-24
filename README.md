@@ -13,55 +13,57 @@
 
 ### Snapshot
 
-I build cloud data platforms and integration systems that move enterprise data reliably across GCP and Azure, with strong depth in Databricks-based engineering.
+I build production Databricks Lakehouse platforms — Unity Catalog automation, metadata-driven ingestion, Infrastructure-as-Code CI/CD, and privacy-preserving AI — across Azure and GCP.
 
 My core focus areas:
-- ETL/ELT architecture and CDC patterns
-- Data pipeline reliability, observability, and automation
-- Distributed data engineering with Databricks and Spark ecosystems
-- AI-assisted engineering workflows for faster, safer delivery
+- Databricks Lakehouse, Unity Catalog governance, and Delta Lake
+- CI/CD and Infrastructure-as-Code for data platforms (Asset Bundles, Azure DevOps)
+- Metadata-driven ETL/ELT, CDC, and near-real-time ingestion
+- Applied AI in pipelines (PII masking, LLM classification) and AI-assisted engineering
 
 ### Featured Initiative
 
-**AI-integrated BigQuery SDLC — a repo-first operating model**
+**Customer Service Hub — a production Databricks Lakehouse, deployed as code**
 
-Self-driven initiative at Ashley to make AI pair-programming safely usable on a warehouse platform that had *no native repo support and zero margin for unreviewed change*.
+Built and operate the Lakehouse at Ashley that consolidates voice, chat, order-event, case, and customer master data into Unity Catalog for operational reporting, AI-driven interaction classification, and PII-safe analytics.
 
-- **Problem.** AI-first SDLC was accelerating API/UI/backend teams, but BigQuery had no native or third-party way to live in a Git repo — the very context AI tools need. Leadership had legitimate concerns about AI touching databases where changes are not as reversible as code.
-- **Approach.** Exported BigQuery into a repo via `INFORMATION_SCHEMA` (tables, views, routines, functions → SQL + parallel JSON metadata in GCS), authored RFC-2119 style AI standards (naming, audit columns, formatting, JOIN discipline, documentation), and built a human workflow that forbids direct DDL — every structural change flows through feature branch → PR review → generated change script with data-migration steps → deployment by named BigQuery owners. `main-dev` mirrors dev GCP; release branches into `main` mirror prod.
-- **Outcome.** Representative use cases dropped from **~5 days to 1–2 days** for my team. Endorsed by leadership and **now the reference pattern other Ashley teams follow for their databases**. Human accountability preserved at the PR gate by design, not policy. Currently evolving toward CI/CD on PR merge while keeping the PR-level human gate intact.
+- **CI/CD as code.** 4-stage Azure DevOps pipeline (Validate → Dev → Stage → Prod) deploying Databricks Asset Bundles with per-environment service principals and approval gates. A Python bundle generator enforces naming, catches duplicates and missing notebooks at build time, and applies job permissions consistently. Reusable templates cut the pipeline from **1,042 to 228 lines**.
+- **Schema reconciliation engine.** Diffs version-controlled DDL against the live Unity Catalog, auto-applies safe changes (new columns, type widening), and routes destructive or ambiguous drift to a conditional review gate that blocks only in Production. Backed by **140 pytest tests** and six CI-enforced DDL rules.
+- **Ingestion & AI.** **6 production Databricks Workflows** using metadata-driven, watermark-based ingestion; Azure Service Bus → Auto Loader every 15 minutes; GPU PII masking (XLM-RoBERTa Large + Microsoft Presidio) followed by `AI_CLASSIFY` interaction categorisation.
 
-> Stack: BigQuery · GCS · Augment Code · Git · GitHub PRs · INFORMATION_SCHEMA · PowerShell · JSON schemas
+> Stack: Databricks · Unity Catalog · Delta Lake · Asset Bundles · Auto Loader · PySpark · Azure DevOps · Azure Service Bus · pytest · Presidio · AI_CLASSIFY
+
+**Also at Ashley — AI-integrated BigQuery SDLC.** Exported BigQuery into a Git repo via `INFORMATION_SCHEMA`, wrote RFC-2119 standards for AI coding agents, and built a human-gated PR → change-script → owner-deployment workflow. Representative delivery dropped from **~5 days to 1–2 days**, and other Ashley teams now use it as the reference pattern.
 
 ### At A Glance
 
 | Area | Summary |
 |---|---|
-| Role Focus | Data Engineering, Cloud Data Platforms, Integration-heavy Delivery |
-| Core Cloud | GCP, Azure, Databricks |
+| Role Focus | Databricks Lakehouse, Data Platforms & CI/CD |
+| Core Platforms | Databricks, Azure, GCP |
 | Data Scale | 15TB+ enterprise workloads |
-| Delivery Impact | 80% productivity gain, 11 POCs beyond target, 22 improvements |
+| Delivery Impact | 20× runtime gain, 140 automated tests, 6 production workflows, 11 POCs, 22 improvements |
 
 ### Currently Building
 
-- GCP data pipelines with BigQuery, Cloud Functions, Dataflow, and Databricks
-- Cross-cloud data integration across Azure and GCP
+- Hardening the Unity Catalog reconciliation engine and reviewed change-script path
+- A vendor-agnostic customer-service data model ready for conversational-AI sources
 - Metadata-driven delivery patterns for repeatable platform work
 
 ### Databricks Expertise
 
-- Spark-based data engineering for scalable ETL/ELT processing
-- Delta-oriented data workflows for reliability and maintainability
-- Performance-aware pipeline design across storage, compute, and scheduling
-- Integration of Databricks workloads with broader Azure and GCP data platforms
+- Unity Catalog governance and automated schema evolution across Dev / Stage / Prod
+- Databricks Asset Bundles, Workflows, and Infrastructure-as-Code deployment
+- Auto Loader and metadata-driven, watermark-based ingestion into Delta Lake
+- GPU and LLM enrichment inside pipelines (Presidio, XLM-RoBERTa, `AI_CLASSIFY`)
 
 ### Signature Wins
 
 | Metric | Outcome |
 |---|---|
-| 80% | Productivity gain from AI-assisted workflows |
-| 11 | POCs delivered beyond target |
-| 22 | Process improvements implemented |
+| 20× | Encrypted-file processing runtime: ~4 hours → ~10 minutes |
+| 140 | Automated pytest tests running in CI/CD |
+| 78% | Smaller deployment pipeline (1,042 → 228 lines) |
 | 15TB+ | Enterprise data scale handled |
 
 <p align="center">
@@ -95,9 +97,9 @@ Action: Standardized integration patterns and reliability-focused pipeline desig
 Outcome: Enabled high-volume delivery at 15TB+ enterprise data scale.
 
 - AI-Assisted Delivery Enablement
-Problem: Engineering cycles were slower than business demand.
-Action: Introduced practical AI-assisted workflows into day-to-day engineering delivery.
-Outcome: Achieved 80% productivity gain and accelerated execution.
+Problem: Data engineering lagged other teams in adopting AI safely.
+Action: Built repo-first SDLCs for BigQuery and Databricks, with AI-agent rules files (naming, secrets, catalog conventions) and human PR gates.
+Outcome: Representative BigQuery changes went from ~5 days to 1–2 days; the pattern was extended to the Databricks platform.
 
 - Continuous Improvement Drive
 Problem: Multiple delivery bottlenecks reduced throughput.
@@ -106,9 +108,10 @@ Outcome: Implemented 22 measurable process improvements and exceeded POC targets
 
 ### Tech Stack
 
-**Cloud and Data:** GCP, Azure, Databricks, BigQuery, Dataflow, ADF, Synapse, Fabric, Logic Apps, Function Apps  
-**Languages and Runtime:** Python, C#, .NET, SQL, KQL, PySpark  
-**Engineering and Delivery:** Web APIs, Hangfire, Power BI, Agile/Scrum, stakeholder collaboration
+**Databricks:** Lakehouse, Unity Catalog, Delta Lake, Asset Bundles, Auto Loader, Workflows, AI_CLASSIFY  
+**Cloud and Data:** Azure (ADF, Synapse, Service Bus, Functions, Logic Apps, DevOps), GCP (BigQuery, Cloud Run Jobs, Cloud Workflows, Dataflow), Microsoft Fabric  
+**Languages and Runtime:** Python, PySpark, SQL, C#, .NET, KQL, YAML, Bash  
+**Engineering and Delivery:** Infrastructure-as-Code, pytest, Web APIs, Hangfire, Power BI, Presidio, Agile/Scrum
 
 ### Engineering Principles
 
@@ -117,7 +120,7 @@ Outcome: Implemented 22 measurable process improvements and exceeded POC targets
 - Fast iteration: use AI-assisted workflows while keeping quality gates clear
 
 ### Now And Next
-
+Operating and extending a production Databricks Lakehouse with Unity Catalog automation and CI/CD
 **Now:** Building robust cross-cloud data pipelines with Databricks-enabled engineering patterns.  
 **Next:** Solving larger platform-scale data and integration challenges with measurable business impact.
 
@@ -133,9 +136,9 @@ Agentic engineering workflows, metadata-driven pipelines, and practical patterns
 
 ### What I Can Help With
 
-- Building scalable cloud data pipelines across GCP and Azure
-- Designing CDC and integration-first enterprise data workflows
-- Productionizing Databricks and Spark-based engineering solutions
+- Building and productionizing Databricks Lakehouse platforms on Unity Catalog
+- CI/CD and Infrastructure-as-Code for data platforms, including automated schema evolution
+- Scalable cloud data pipelines and CDC across GCP and Azure
 - Improving delivery velocity through automation and AI-assisted workflows
 
 ### Open To

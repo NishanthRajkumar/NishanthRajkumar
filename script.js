@@ -193,9 +193,9 @@ if (shuffleHighlights) {
   const tourCards = Array.from(document.querySelectorAll("[data-tour-step]"))
     .sort((a, b) => Number(a.dataset.tourStep) - Number(b.dataset.tourStep));
   const stories = [
-    "Productivity Gain: AI-assisted workflows reduced delivery friction and improved turnaround speed by 80%.",
-    "POCs Beyond Target: Delivery capacity outperformed plan with 11 proof-of-concepts completed above target.",
-    "Process Improvements: 22 operational improvements strengthened reliability and throughput across delivery lifecycle.",
+    "20Ã— Faster: Re-engineered encrypted-file processing on Cloud Workflows + Cloud Run Jobs with parallelism â€” about 4 hours down to 10 minutes.",
+    "140 Automated Tests: pytest suites for the bundle generator and Unity Catalog diff engine run on every CI/CD build.",
+    "78% Leaner Pipeline: Reusable Azure Pipelines templates shrank the Databricks deployment pipeline from 1,042 to 228 lines.",
     "Enterprise Data Scale: Platform engineering patterns supported dependable movement of data at 15TB+ scale.",
   ];
   let activeMetricIndex = -1;
@@ -408,7 +408,7 @@ directDownloadLinks.forEach((link) => {
   autoObserver.observe(proofSection);
 })();
 
-// F1: Interactive architecture diagram — hover/focus a stage to populate detail panel.
+// F1: Interactive architecture diagram ï¿½ hover/focus a stage to populate detail panel.
 (function () {
   const archDetail = document.getElementById("archDetail");
   if (!archDetail) return;
@@ -417,29 +417,29 @@ directDownloadLinks.forEach((link) => {
 
   const stageData = {
     source: {
-      title: "Source — Operational systems of record",
-      body: "Transactional databases that own the truth. We read change events rather than running heavy analytical queries, so producers see negligible extra load.",
-      stack: "SQL Server · PostgreSQL · MongoDB · Oracle",
+      title: "Sources \u2014 Support and customer systems of record",
+      body: "Voice and chat interaction platforms, sales-order events, cases/complaints, and customer, party and fulfilment master data from the enterprise warehouse.",
+      stack: "Contact-centre voice \u00b7 Digital chat \u00b7 Order events \u00b7 Enterprise DW",
     },
     capture: {
-      title: "CDC Capture — Row-level change events",
-      body: "Native CDC (e.g. SQL Server CDC, MongoDB change streams) or Debezium-style log readers turn inserts/updates/deletes into ordered, replayable events.",
-      stack: "Debezium · SQL Server CDC · Mongo change streams",
+      title: "Capture \u2014 Event-driven order feed",
+      body: "Sales-order events are published to an Azure Service Bus topic; a Function App writes them out as parquet files so the Lakehouse can pick them up incrementally.",
+      stack: "Azure Service Bus \u00b7 Azure Functions \u00b7 Parquet",
     },
     transport: {
-      title: "Transport — Partitioned, replayable bus",
-      body: "Events land on a managed event bus partitioned by entity key. Replay windows let us recover from downstream failures without re-touching the source.",
-      stack: "Azure Event Hubs · Google Pub/Sub · Kafka",
+      title: "Ingest \u2014 Auto Loader + config-driven framework",
+      body: "Auto Loader lands order files in the raw zone every 15 minutes. All other sources run through generic source-to-stage notebooks driven by a config table, with watermarks for incremental and idempotent reloads.",
+      stack: "Databricks Auto Loader \u00b7 Delta Lake \u00b7 Config tables \u00b7 Audit watermarks",
     },
     transform: {
-      title: "Transform — Stream + micro-batch enrichment",
-      body: "Dataflow / ADF handles low-latency streaming joins; Databricks handles heavier curation, dedup, and SCD logic. Idempotent merges keep at-least-once delivery safe.",
-      stack: "Dataflow · ADF · Databricks · Delta · PySpark",
+      title: "Transform & enrich \u2014 Curate, protect, classify",
+      body: "PySpark notebooks and chained SQL procedures build staging and processed layers. Transcripts are PII-masked on GPU (XLM-RoBERTa Large + Presidio) before AI_CLASSIFY assigns Parent~Child categories, with a remediation pass for anything left uncategorised.",
+      stack: "PySpark \u00b7 SQL procedures \u00b7 Presidio \u00b7 XLM-RoBERTa \u00b7 AI_CLASSIFY \u00b7 T4 GPU",
     },
     serve: {
-      title: "Serve — Query-ready warehouse + alerts",
-      body: "Curated tables land in BigQuery / Synapse / Fabric for analytics consumers, with Power BI on top. KQL alert rules close the loop on freshness, lag, and failure.",
-      stack: "BigQuery · Synapse · Microsoft Fabric · Power BI · KQL",
+      title: "Serve \u2014 Governed Unity Catalog + reporting",
+      body: "Processed Delta tables across five business domains (customer, order, interaction, engagement, case) feed operational reporting and engagement insight. Every job alerts the team on failure, and schema is reconciled by CI/CD.",
+      stack: "Unity Catalog \u00b7 Delta Lake \u00b7 Databricks Workflows \u00b7 Azure DevOps",
     },
   };
 
@@ -613,7 +613,7 @@ directDownloadLinks.forEach((link) => {
         const before = firstRects.get(c);
         const after = c.getBoundingClientRect();
         if (!before) {
-          // Card was hidden, now appearing — fade + scale in
+          // Card was hidden, now appearing ï¿½ fade + scale in
           c.animate(
             [
               { opacity: 0, transform: "scale(0.96)" },
@@ -640,7 +640,7 @@ directDownloadLinks.forEach((link) => {
   }
 
   // Capture-phase listener fires BEFORE the existing bubble-phase chip handler
-  // that toggles .hide — letting us measure positions first.
+  // that toggles .hide ï¿½ letting us measure positions first.
   chips.forEach((chip) => {
     chip.addEventListener("click", runFlip, true);
   });
@@ -750,7 +750,7 @@ directDownloadLinks.forEach((link) => {
           try { localStorage.setItem(cacheKey, JSON.stringify({ n: n, t: Date.now() })); } catch (e) {}
           render(n);
         })
-        .catch(() => { /* silent — rate limit / offline */ });
+        .catch(() => { /* silent ï¿½ rate limit / offline */ });
     });
   })();
 
